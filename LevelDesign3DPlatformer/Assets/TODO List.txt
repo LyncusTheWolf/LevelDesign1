@@ -1,0 +1,4 @@
+﻿Setup generic parenting inside of the player controller
+Fix the jump pad setup so that it works with the new character controller
+Fix the moving platforms so they no longer need the parenting to self trigger on them and also remove their rigidbodies and replace with delta movement rather than fixed delta
+Polish the animator states and allow for better transitions into each state through proper flow

@@ -1,0 +1,2773 @@
+fileFormatVersion: 2
+guid: f78ed9bc38dd8764f8e2e686c9c360e0
+timeCreated: 1489551624
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Calf_L
+    100002: Calf_R
+    100004: Chest
+    100006: Eye_L
+    100008: Eye_L_end
+    100010: Eye_R
+    100012: Eye_R_end
+    100014: Foot_Controller_L
+    100016: Foot_Controller_R
+    100018: Foot_L
+    100020: Foot_R
+    100022: Global
+    100024: Hand_L
+    100026: Hand_R
+    100028: Head
+    100030: Hips
+    100032: Index_Controller_L
+    100034: Index_Controller_R
+    100036: Index_Distal_L
+    100038: Index_Distal_L_end
+    100040: Index_Distal_R
+    100042: Index_Distal_R_end
+    100044: Index_Point_L
+    100046: Index_Point_L_end
+    100048: Index_Point_R
+    100050: Index_Point_R_end
+    100052: Index_Proximal_L
+    100054: Index_Proximal_R
+    100056: Jaw
+    100058: Jaw_end
+    100060: Jaw_IK_Point
+    100062: Jaw_IK_Point_end
+    100064: LowerArm_L
+    100066: LowerArm_R
+    100068: Middle_Controller_L
+    100070: Middle_Controller_R
+    100072: Middle_Distal_L
+    100074: Middle_Distal_L_end
+    100076: Middle_Distal_R
+    100078: Middle_Distal_R_end
+    100080: Middle_Point_L
+    100082: Middle_Point_L_end
+    100084: Middle_Point_R
+    100086: Middle_Point_R_end
+    100088: Middle_Proximal_L
+    100090: Middle_Proximal_R
+    100092: Neck
+    100094: Pinky_Controller_L
+    100096: Pinky_Controller_R
+    100098: Pinky_Distal_L
+    100100: Pinky_Distal_L_end
+    100102: Pinky_Distal_R
+    100104: Pinky_Distal_R_end
+    100106: Pinky_Point_L
+    100108: Pinky_Point_L_end
+    100110: Pinky_Point_R
+    100112: Pinky_Point_R_end
+    100114: Pinky_Proximal_L
+    100116: Pinky_Proximal_R
+    100118: Reverse_Toe_L
+    100120: Reverse_Toe_R
+    100122: Rictor
+    100124: RictorArma
+    100126: //RootNode
+    100128: Root
+    100130: Shoulder_L
+    100132: Shoulder_R
+    100134: Spine
+    100136: Tail_Distal
+    100138: Tail_Distal_end
+    100140: Tail_Intermediate
+    100142: Tail_Intermediate_2
+    100144: Tail_Proximal
+    100146: Thigh_L
+    100148: Thigh_R
+    100150: Thumb_Distal_L
+    100152: Thumb_Distal_L_end
+    100154: Thumb_Distal_R
+    100156: Thumb_Distal_R_end
+    100158: Thumb_Proximal_L
+    100160: Thumb_Proximal_R
+    100162: Thumber_Controller_L
+    100164: Thumber_Controller_R
+    100166: Thumber_Point_L
+    100168: Thumber_Point_L_end
+    100170: Thumber_Point_R
+    100172: Thumber_Point_R_end
+    100174: Toe_Forward_L
+    100176: Toe_Forward_R
+    100178: Toe_IK_L
+    100180: Toe_IK_L_end
+    100182: Toe_IK_R
+    100184: Toe_IK_R_end
+    100186: Toe_L
+    100188: Toe_L_end
+    100190: Toe_R
+    100192: Toe_R_end
+    100194: UpperArm_L
+    100196: UpperArm_R
+    400000: Calf_L
+    400002: Calf_R
+    400004: Chest
+    400006: Eye_L
+    400008: Eye_L_end
+    400010: Eye_R
+    400012: Eye_R_end
+    400014: Foot_Controller_L
+    400016: Foot_Controller_R
+    400018: Foot_L
+    400020: Foot_R
+    400022: Global
+    400024: Hand_L
+    400026: Hand_R
+    400028: Head
+    400030: Hips
+    400032: Index_Controller_L
+    400034: Index_Controller_R
+    400036: Index_Distal_L
+    400038: Index_Distal_L_end
+    400040: Index_Distal_R
+    400042: Index_Distal_R_end
+    400044: Index_Point_L
+    400046: Index_Point_L_end
+    400048: Index_Point_R
+    400050: Index_Point_R_end
+    400052: Index_Proximal_L
+    400054: Index_Proximal_R
+    400056: Jaw
+    400058: Jaw_end
+    400060: Jaw_IK_Point
+    400062: Jaw_IK_Point_end
+    400064: LowerArm_L
+    400066: LowerArm_R
+    400068: Middle_Controller_L
+    400070: Middle_Controller_R
+    400072: Middle_Distal_L
+    400074: Middle_Distal_L_end
+    400076: Middle_Distal_R
+    400078: Middle_Distal_R_end
+    400080: Middle_Point_L
+    400082: Middle_Point_L_end
+    400084: Middle_Point_R
+    400086: Middle_Point_R_end
+    400088: Middle_Proximal_L
+    400090: Middle_Proximal_R
+    400092: Neck
+    400094: Pinky_Controller_L
+    400096: Pinky_Controller_R
+    400098: Pinky_Distal_L
+    400100: Pinky_Distal_L_end
+    400102: Pinky_Distal_R
+    400104: Pinky_Distal_R_end
+    400106: Pinky_Point_L
+    400108: Pinky_Point_L_end
+    400110: Pinky_Point_R
+    400112: Pinky_Point_R_end
+    400114: Pinky_Proximal_L
+    400116: Pinky_Proximal_R
+    400118: Reverse_Toe_L
+    400120: Reverse_Toe_R
+    400122: Rictor
+    400124: RictorArma
+    400126: //RootNode
+    400128: Root
+    400130: Shoulder_L
+    400132: Shoulder_R
+    400134: Spine
+    400136: Tail_Distal
+    400138: Tail_Distal_end
+    400140: Tail_Intermediate
+    400142: Tail_Intermediate_2
+    400144: Tail_Proximal
+    400146: Thigh_L
+    400148: Thigh_R
+    400150: Thumb_Distal_L
+    400152: Thumb_Distal_L_end
+    400154: Thumb_Distal_R
+    400156: Thumb_Distal_R_end
+    400158: Thumb_Proximal_L
+    400160: Thumb_Proximal_R
+    400162: Thumber_Controller_L
+    400164: Thumber_Controller_R
+    400166: Thumber_Point_L
+    400168: Thumber_Point_L_end
+    400170: Thumber_Point_R
+    400172: Thumber_Point_R_end
+    400174: Toe_Forward_L
+    400176: Toe_Forward_R
+    400178: Toe_IK_L
+    400180: Toe_IK_L_end
+    400182: Toe_IK_R
+    400184: Toe_IK_R_end
+    400186: Toe_L
+    400188: Toe_L_end
+    400190: Toe_R
+    400192: Toe_R_end
+    400194: UpperArm_L
+    400196: UpperArm_R
+    4300000: Rictor
+    7400000: RictorArma|Action
+    7400002: RictorArma|BindPose
+    7400004: RictorArma|Fall Idle
+    7400006: RictorArma|Idle
+    7400008: RictorArma|Idle2
+    7400010: RictorArma|Jump
+    7400012: RictorArma|Landing
+    7400014: RictorArma|RunAgain
+    7400016: RictorArma|Walk
+    7400018: RictorArma|Wall Jump
+    7400020: RictorArma|Wall Slide Idle
+    9500000: //RootNode
+    13700000: Rictor
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: RictorArma|Action
+      takeName: RictorArma|Action
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|BindPose
+      takeName: RictorArma|BindPose
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|Fall Idle
+      takeName: RictorArma|Fall Idle
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|Idle
+      takeName: RictorArma|Idle
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|Idle2
+      takeName: RictorArma|Idle2
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|Jump
+      takeName: RictorArma|Jump
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|Landing
+      takeName: RictorArma|Landing
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|RunAgain
+      takeName: RictorArma|RunAgain
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|Walk
+      takeName: RictorArma|Walk
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|Wall Jump
+      takeName: RictorArma|Wall Jump
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RictorArma|Wall Slide Idle
+      takeName: RictorArma|Wall Slide Idle
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rictor
+        weight: 1
+      - path: RictorArma
+        weight: 1
+      - path: RictorArma/Global
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_L/Reverse_Toe_L/Toe_Forward_L/Toe_IK_L/Toe_IK_L_end
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R
+        weight: 1
+      - path: RictorArma/Global/Foot_Controller_R/Reverse_Toe_R/Toe_Forward_R/Toe_IK_R/Toe_IK_R_end
+        weight: 1
+      - path: RictorArma/Global/Root
+        weight: 1
+      - path: RictorArma/Global/Root/Hips
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw/Jaw_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Neck/Head/Jaw_IK_Point/Jaw_IK_Point_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Controller_L/Index_Point_L/Index_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Index_Proximal_L/Index_Distal_L/Index_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Controller_L/Middle_Point_L/Middle_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Middle_Proximal_L/Middle_Distal_L/Middle_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Controller_L/Pinky_Point_L/Pinky_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Pinky_Proximal_L/Pinky_Distal_L/Pinky_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumb_Proximal_L/Thumb_Distal_L/Thumb_Distal_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_L/UpperArm_L/LowerArm_L/Hand_L/Thumber_Controller_L/Thumber_Point_L/Thumber_Point_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Controller_R/Index_Point_R/Index_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Index_Proximal_R/Index_Distal_R/Index_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Controller_R/Middle_Point_R/Middle_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Middle_Proximal_R/Middle_Distal_R/Middle_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Controller_R/Pinky_Point_R/Pinky_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Pinky_Proximal_R/Pinky_Distal_R/Pinky_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumb_Proximal_R/Thumb_Distal_R/Thumb_Distal_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Spine/Chest/Shoulder_R/UpperArm_R/LowerArm_R/Hand_R/Thumber_Controller_R/Thumber_Point_R/Thumber_Point_R_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Tail_Proximal/Tail_Intermediate/Tail_Intermediate_2/Tail_Distal/Tail_Distal_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R
+        weight: 1
+      - path: RictorArma/Global/Root/Hips/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

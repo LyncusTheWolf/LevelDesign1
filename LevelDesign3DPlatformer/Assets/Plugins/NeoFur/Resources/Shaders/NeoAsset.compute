@@ -1,0 +1,447 @@
+﻿#pragma kernel NeoAsset
+
+//input vert
+struct NeoVertex
+{
+	float3	Position;
+	float3	Normal;
+	float4	Tangent;
+
+	float2	UV0;
+
+	//no byte types, will have to change in C# struct
+	int4	InfluenceBones;
+	float4	InfluenceWeights;
+
+	float3	CombedDirectionAndLength;
+};
+
+//for morphs
+struct BlendVertex
+{
+	float3	Position;
+	float3	Normal;
+	float3	Tangent;
+};
+
+struct OutVertex
+{
+	float3	Position;
+	float3	Normal;
+	float4	Tangent;
+
+	float4	UV0_ThickenAlpha;
+};
+
+struct ControlPoint
+{
+	float3	Position;
+	float3	Velocity;
+};
+
+//input buffers
+StructuredBuffer<NeoVertex>		Verts;
+StructuredBuffer<int>			Indexes;
+StructuredBuffer<float4x4>		Bones;
+StructuredBuffer<BlendVertex>	Blends;
+StructuredBuffer<float>			BlendWeights;	//weights + radial force stuff
+
+//output buffers
+RWStructuredBuffer<OutVertex>		outVerts;
+RWStructuredBuffer<ControlPoint>	ControlPoints;
+
+//usual shadey constants
+int		In_ShellCount;
+int		In_TotalShellCount;
+float	In_ShellDistance;
+int		NumVerts;
+int		NumIndexes;
+float	In_ShellFade;
+int		mbSkinned;		//0static 1skinned
+int		NumBlends;		//number of morphs
+int		NumRadialForces;
+
+//physics stuff
+float	VelocityInfluence;
+float	SpringLenStiff;
+float	SpringAngleStiff;
+float	SpringDampMult;
+float	GravityInfluence;
+float	AirResistMult;
+float	MaxStretchDist;
+float	MinStretchDist;
+float	MaxRotNorm;
+float	RadialForceInfluence;
+float	WindInfluence;
+float	BendExponent;
+float4	TransformDelta0;	//rot and scale now too
+float4	TransformDelta1;	//rot and scale now too
+float4	TransformDelta2;	//rot and scale now too
+float4	TransformDelta3;	//rot and scale now too
+float3	LocalGravityVec;
+float	In_DeltaTime;
+float3	WindVector;			//direction and power of wind force
+float	GustFactor;			//additional power if a gust is active
+
+
+float4x4 GetSkinXForm(int4 bnIdxs, float4 bnWeights)
+{
+	float4x4 skinTransform	=Bones[bnIdxs.x] * bnWeights.x;
+
+	skinTransform	+=Bones[bnIdxs.y] * bnWeights.y;
+	skinTransform	+=Bones[bnIdxs.z] * bnWeights.z;
+	skinTransform	+=Bones[bnIdxs.w] * bnWeights.w;
+	
+	return	skinTransform;
+}
+
+//skin transform vert data
+void ComputeSkin(int4 boneIdx, float4 weights,
+	inout float3 position, 
+	inout float3 norm,
+	inout float3 splineDir,
+	inout float3 tan)
+{
+	//do the bone influences
+	float4x4 skinTransform	=GetSkinXForm(boneIdx, weights);
+
+	float4	pos	=float4(position, 1);
+
+	pos			=mul(skinTransform, pos);
+	norm		=mul(skinTransform, norm);
+	splineDir	=mul(skinTransform, splineDir);
+	tan			=mul(skinTransform, tan);
+
+	position	=pos.xyz / pos.w;
+}
+
+void MaxAngleClamp(float3 vertPos, float3 normalizedSplineDir, inout float3 cpPos)
+{
+	float	maxRads		=MaxRotNorm * 3.14159 / 180.0;
+	float3	cpOffset	=(cpPos - vertPos);
+	float	offsetLen	=length(cpOffset);
+	if(offsetLen < 0.0001)
+	{
+		return;	//close to vert, can't vary angle much
+	}
+
+	float3	normalizedOffset	=cpOffset / offsetLen;
+
+	float	d	=dot(normalizedSplineDir, normalizedOffset);
+	if(d > 0.999)
+	{
+		return;	//acos gets nannish near 1
+	}
+	float	ang	=acos(d);
+	if(ang <= maxRads)
+	{
+		return;
+	}
+
+	float3	goodVec	=lerp(normalizedSplineDir, normalizedOffset, maxRads / ang);
+
+	// Restore the length of the original offset.
+	goodVec	=normalize(goodVec);
+	goodVec	*=offsetLen;
+
+	cpPos	=goodVec + vertPos;
+}
+
+void MinMaxDistanceClamp(float3 vertPos, float splineLength, inout float3 cpPos)
+{
+	float3	cpVec	=cpPos - vertPos;
+
+	float	dist	=length(cpVec);
+	float	maxDist	=splineLength * MaxStretchDist;
+	float	minDist	=splineLength * MinStretchDist;
+
+	if(dist > maxDist)
+	{
+		float3	newOffset	=(cpVec / dist) * maxDist;
+		cpPos				=vertPos + newOffset;
+	}
+	else if(dist < minDist)
+	{
+		float3	newOffset	=(cpVec / dist) * minDist;
+		cpPos				=vertPos + newOffset;
+	}
+}
+
+float3 SpringSim(float3 vertPos, float3 cpPos,
+				 float3 normalizedSplineDir, float splineLength)
+{
+	//spring sim
+	float3	TotalSpringForce	=0;
+
+	//spring length stuff
+	float3	SpringVector	=cpPos - vertPos;
+	float	SpringLength	=length(SpringVector);
+	if(SpringLength > 0.01f)
+	{
+		//linear spring
+		float	SpringRestLength	=splineLength;
+		float	SpringOffset		=SpringRestLength - SpringLength;
+		float	SpringStiffness		=SpringLenStiff;
+		float	SpringForce			=SpringStiffness * SpringOffset;
+
+		TotalSpringForce	+=(SpringVector / SpringLength) * SpringForce;
+
+		//torsion spring
+		float	dp			=dot(SpringVector / SpringLength, normalizedSplineDir);
+		float	AngleOffset	=0.0;
+		if(dp < 1)
+		{
+			AngleOffset	=acos(dp);
+		}
+
+		float	AngleSpringStiffness	=SpringAngleStiff;
+		if(AngleOffset > 0.01f)
+		{
+			float3	vTarget	=vertPos + normalizedSplineDir * splineLength;
+
+			float3	AngleSpringReturnForceDirection	=vTarget - cpPos;
+
+			AngleSpringReturnForceDirection	=normalize(AngleSpringReturnForceDirection);
+
+			float3	FinalReturnVelocity	=AngleSpringReturnForceDirection * In_DeltaTime * AngleSpringStiffness * AngleOffset;
+
+			//clamp to max required velocity to get to rest position this frame
+			if(SpringLength < (length(FinalReturnVelocity) * In_DeltaTime))
+			{
+				FinalReturnVelocity	=(vTarget - cpPos) / In_DeltaTime;
+			}
+			TotalSpringForce	+=FinalReturnVelocity / In_DeltaTime;
+		}
+	}
+	return	TotalSpringForce;
+}
+
+void RadialForce(float3 cpPos, inout float3 cpVel)
+{
+	for(int k = 0; k < NumRadialForces; k++)
+	{
+		float3	RadialForceVector	=cpPos - float3(
+			BlendWeights[NumBlends + (k * 5)],
+			BlendWeights[NumBlends + (k * 5) + 1],
+			BlendWeights[NumBlends + (k * 5) + 2]);
+
+		float	RadialForceDistance	=length(RadialForceVector);
+		float	RadialRadius		=BlendWeights[NumBlends + (k * 5) + 3];
+		float	RadialPower			=BlendWeights[NumBlends + (k * 5) + 4];
+
+		if(RadialForceDistance <= RadialRadius)
+		{
+			float	RadialForceScale	=1.0 - (RadialForceDistance / RadialRadius);
+
+			RadialForceVector	/=RadialForceDistance;
+
+			cpVel	+=RadialForceVector *
+				RadialForceScale * RadialForceInfluence * RadialPower;
+		}
+	}
+}
+
+//apply morph deltas to vert data
+void Morph(int idx, inout float3 vertPos, inout float3 norm, inout float4 tan)
+{
+	if(NumBlends <= 0)
+	{
+		return;
+	}
+
+	float3	posDiff		=0;
+	float3	normDiff	=0;
+	float3	tanDiff		=0;
+
+	for(int blend=0;blend < NumBlends;blend++)
+	{
+		float	weight	=BlendWeights[blend];
+
+		float3	morphPos	=Blends[idx + (blend * NumVerts)].Position;
+		float3	morphNorm	=Blends[idx + (blend * NumVerts)].Normal;
+		float3	morphTan	=Blends[idx + (blend * NumVerts)].Tangent;
+
+		posDiff		+=(morphPos * weight);
+		normDiff	+=(morphNorm * weight);
+		tanDiff		+=(morphTan * weight);
+	}
+
+	vertPos	+=posDiff;
+	norm	+=normDiff;
+	tan.xyz	+=tanDiff;
+
+	//renormalize
+	norm	=normalize(norm);
+	tan.xyz	=normalize(tan.xyz);
+}
+
+
+//TODO: better threading
+[numthreads(1, 1, 1)]
+void NeoAsset(uint3 id : SV_DispatchThreadID)
+{
+	int	idx	=Indexes[id.x];
+
+	float3	norm, splineDir;
+	float4	tan;
+
+	float3	skinPos;
+	float3	cpPos	=ControlPoints[idx].Position;
+	float3	cpVel	=ControlPoints[idx].Velocity;
+
+	skinPos		=Verts[idx].Position;
+	norm		=Verts[idx].Normal;
+	splineDir	=Verts[idx].CombedDirectionAndLength;
+	tan			=Verts[idx].Tangent;
+
+	//morphs go first
+	Morph(idx, skinPos, norm, tan);
+
+	if(mbSkinned)
+	{
+		ComputeSkin(Verts[idx].InfluenceBones, Verts[idx].InfluenceWeights,
+			skinPos, norm, splineDir, tan.xyz);
+	}
+
+	float3	SkinnedFinalSplineDir	=splineDir;
+	float	SplineLength			=length(splineDir) * In_ShellDistance;
+	float3	NormalizedSplineDir		=normalize(SkinnedFinalSplineDir);
+
+	// Velocity as a result of the different transform.
+	// --------------------------------------------------------------------
+
+	// General velocity "fudge". Not realistic, but makes it look stiff by
+	// faking it.
+	float	VelocityAlpha	=VelocityInfluence;
+
+	float3	deltaVelocity	=0;
+
+	//rotate via projection, matrix row swizzles problematic for shader compiler
+	//TODO: will this break scale velocity?
+	deltaVelocity.x	=dot(TransformDelta0.xyz, skinPos);
+	deltaVelocity.y	+=dot(TransformDelta1.xyz, skinPos);
+	deltaVelocity.z	+=dot(TransformDelta2.xyz, skinPos);
+	deltaVelocity	+=TransformDelta3.xyz;
+
+	//subtract out the regular skinned position to leave the delta
+	deltaVelocity	-=skinPos;
+
+	//affect velocity
+	cpVel	+=(deltaVelocity * VelocityInfluence);
+
+	// TODO: Velocity needs to be transformed too!
+	// Spring simulation.
+	// --------------------------------------------------------------------
+	float3	TotalSpringForce	=SpringSim(skinPos, cpPos, NormalizedSplineDir, SplineLength);
+
+	cpVel	+=TotalSpringForce * In_DeltaTime * SpringDampMult;
+
+	// Gravity
+	// --------------------------------------------------------------------
+	cpVel += GravityInfluence * In_DeltaTime * LocalGravityVec;
+
+	// Radial force effects. (TODO: Incomplete!)
+	// --------------------------------------------------------------------
+	RadialForce(cpPos, cpVel);
+
+	// Wind
+	// --------------------------------------------------------------------		
+
+	float3 windVec = WindVector * In_DeltaTime * WindInfluence;
+	cpVel += windVec;
+
+	//doesn't work exactly like unreal
+	//the wind generators are different, and unity's is a black box
+	//the sin thing isn't working for me
+	//try a tangent perturb thing
+	//TODO: see if possible to re-use this basis in angle clamp below
+	float3		biNormal	=cross(normalize(norm), normalize(tan.xyz)) * tan.w;
+	float3x3	rotMat		=float3x3(tan.xyz, biNormal, norm);
+	float		windLen		=length(windVec);
+
+	//this is all probably a bit overkill?
+	cpVel	+=mul(rotMat,
+		float3(sin(GustFactor * 5),
+		cos(GustFactor * 10), 0)) * GustFactor * 0.02;
+
+	// "Air Resistance" Dampening - Deceleration proportional to velocity.
+	// --------------------------------------------------------------------
+
+	cpVel *= AirResistMult;
+
+	// Finally, apply the velocity to the particle's position.
+	// --------------------------------------------------------------------
+
+	if(!isnan(cpPos.x) && !isnan(cpPos.y) && !isnan(cpPos.z) &&
+		isfinite(cpPos.x) && isfinite(cpPos.y) && isfinite(cpPos.z)) 
+	{
+		cpPos += cpVel * In_DeltaTime;
+	} else {
+		cpPos = float3(0.0, 0.0, 0.0);
+	}
+
+	// Max distance clamp.
+	// --------------------------------------------------------------------
+	MinMaxDistanceClamp(skinPos, SplineLength, cpPos);
+
+	//Max angle clamp
+	MaxAngleClamp(skinPos, NormalizedSplineDir, cpPos);
+
+	// Write control point for next frame.
+	// --------------------------------------------------------------------
+	ControlPoints[idx].Position	=cpPos;
+	ControlPoints[idx].Velocity	=cpVel;
+
+
+	// Artificial thickness increase for lower-res LODs.
+	float ThickenAmount = 1.0f - (float(In_ShellCount) / float(In_TotalShellCount));
+	ThickenAmount = clamp(ThickenAmount, 0.0f, 1.0f);
+	ThickenAmount = 1.0f + ThickenAmount * 5.0f;
+	
+	//fixes ported over from cpu land
+	//step in shell distance, a pure 0 to 1
+	float	furDelta	=1.0f / (In_ShellCount - 1);
+
+	//a small offset to prevent z fighting on the innermost shell
+	float	firstOffs	=furDelta / 2.0f;
+
+	//step in shell alpha, 1 to stepAmount (never goes 0)
+	float	alphaDelta	=1.0f / (In_ShellCount + 1);
+
+	for(int k = 0; k < In_ShellCount; k++)
+	{	
+		float	curFur		=(furDelta * k) + firstOffs;
+		float	curAlpha	=alphaDelta * (k + 1);
+		float	bpa			=pow(curFur, BendExponent);
+
+		//blend space should be 0 to 1 length, as control points
+		//are not affected by fur length
+		float3	BlendedPoint	=(1.0f - bpa) * (skinPos + SkinnedFinalSplineDir)
+			+ bpa * cpPos;
+
+		//get a vector from the blended point to the vert
+		float3	blendVec	=BlendedPoint - skinPos;
+
+		//scale by fur length
+		blendVec	*=In_ShellDistance;
+
+		float3	newPos	=lerp(skinPos,
+			skinPos + blendVec, curFur * In_ShellFade);
+
+		outVerts[id.x + (k * NumIndexes)].Position				=newPos;
+		outVerts[id.x + (k * NumIndexes)].Normal				=norm;
+		outVerts[id.x + (k * NumIndexes)].Tangent				=tan;
+		outVerts[id.x + (k * NumIndexes)].UV0_ThickenAlpha.xy	=Verts[idx].UV0;
+
+		if(SplineLength <= 0)
+		{
+			outVerts[id.x + (k * NumIndexes)].UV0_ThickenAlpha.z	=-1.0;
+			outVerts[id.x + (k * NumIndexes)].UV0_ThickenAlpha.w	=-1.0;
+		}
+		else
+		{
+			outVerts[id.x + (k * NumIndexes)].UV0_ThickenAlpha.z	=pow(curAlpha, ThickenAmount);
+			outVerts[id.x + (k * NumIndexes)].UV0_ThickenAlpha.w	=curAlpha;
+		}
+	}
+}

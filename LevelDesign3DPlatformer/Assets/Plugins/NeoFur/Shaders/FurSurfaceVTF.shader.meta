@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: c0b8e6289be583540a287279cfa7a929
+timeCreated: 1480556282
+licenseType: Free
+ShaderImporter:
+  defaultTextures:
+  - _RootTexture: {fileID: 2800000, guid: c30ce0ffa3f9c8847819ee4591895130, type: 3}
+  - _TipTexture: {fileID: 2800000, guid: f2058ba9d764d214da24705a1b287139, type: 3}
+  - _DensityTex: {fileID: 2800000, guid: 47916f6c00c11bc498686c279687c02f, type: 3}
+  - _FurNoiseTex: {fileID: 2800000, guid: 44d3d20cbb0ca34489ae1402fd33a696, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
