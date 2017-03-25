@@ -5,17 +5,11 @@ using UnityEngine;
 //[RequireComponent(typeof(CharacterRigidbodyMotor))]
 //[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CharacterMotor))]
-public class Player : MonoBehaviour {
-
-    public const int MAX_PLAYER_HEALTH = 16;
+public class Player : Character {
 
     private static Player instance;
 
-    [SerializeField]
-    private int startingHealth;
 
-    private int currentHealth;
-    private int maxHealth;
     private int coins;
     private int keyCount;
     private CharacterMotor motor;
@@ -47,34 +41,26 @@ public class Player : MonoBehaviour {
         motor = GetComponent<CharacterMotor>();
         //rigidBody = GetComponent<Rigidbody>();
 
-        currentHealth = startingHealth;
-        maxHealth = startingHealth;
         coins = 0;
         keyCount = 0;
     }
 
     // Use this for initialization
     void Start () {
-		
-	}
+        Init();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.N)) {
+            Damage(1);
+        }
 	}
 
-    public void Kill() {
+    public override void Kill() {
         //Do things...
         GameManager.Instance.PollLives();
     }
-
-    /*private void Respawn() {
-        motor.AnimRespawn();
-        //rigidBody.velocity = Vector3.zero;
-        transform.position = respawnPoint.position;
-        transform.rotation = respawnPoint.rotation;
-        ThirdPersonCamera.Instance.ResetPosition();  
-    }*/
 
     public void AddCoin(int amt) {
         coins += amt;

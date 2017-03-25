@@ -73,6 +73,18 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
     <Reference Include="NeoFurUnityPlugin">
       <HintPath>Assets\Plugins\NeoFur\NeoFurUnityPlugin.dll</HintPath>
     </Reference>
@@ -85,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ButtonTrigger.cs" />
+    <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\CharacterMotor.cs" />
     <Compile Include="Assets\Scripts\CharacterRigidbodyMotor.cs" />
     <Compile Include="Assets\Scripts\DrawBridge.cs" />
@@ -106,6 +119,7 @@
     <Compile Include="Assets\Scripts\PushableBlock.cs" />
     <Compile Include="Assets\Scripts\RespawnPoint.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
+    <Compile Include="Assets\Scripts\UI\HeartUIElem.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
     <Compile Include="Assets\Scripts\Utility\Bezier.cs" />
     <Compile Include="Assets\Scripts\Utility\BezierCurve.cs" />
