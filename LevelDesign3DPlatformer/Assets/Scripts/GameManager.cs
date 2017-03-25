@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public const int MAX_PLAYER_HEALTH = 16;
+    public const int PLAYER_STARTING_HEALTH = 3;
+
     private static GameManager instance;
 
     public delegate void OnAlive();
@@ -12,7 +15,6 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private bool debuggerMode;
 #endif
-
 
     [SerializeField]
     private Transform respawnPoint;
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour {
 
     private void RespawnPlayer() {
         motor.AnimRespawn();
+        player.ResetCharacter();
         //rigidBody.velocity = Vector3.zero;
         Debug.Log(respawnPoint.position);
         player.transform.position = respawnPoint.position;
