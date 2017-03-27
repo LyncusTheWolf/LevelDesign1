@@ -119,6 +119,7 @@
     <Compile Include="Assets\Scripts\PushableBlock.cs" />
     <Compile Include="Assets\Scripts\RespawnPoint.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
+    <Compile Include="Assets\Scripts\ThirdPersonSmartCamera.cs" />
     <Compile Include="Assets\Scripts\UI\HeartUIElem.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
     <Compile Include="Assets\Scripts\Utility\Bezier.cs" />

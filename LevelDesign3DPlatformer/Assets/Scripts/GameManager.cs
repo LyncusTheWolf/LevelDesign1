@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour {
     private int playerLives;
     private Player player;
     private CharacterMotor motor;
-    private ThirdPersonCamera thirdPersonCam;
+    //private ThirdPersonCamera thirdPersonCam;
+    private ThirdPersonSmartCamera thirdPersonCam;
 
     public Transform RespawnPoint {
         set { respawnPoint = value; }
@@ -45,7 +46,8 @@ public class GameManager : MonoBehaviour {
 
     public void Start() {
         player = Player.Instance;
-        thirdPersonCam = ThirdPersonCamera.Instance;
+        //thirdPersonCam = ThirdPersonCamera.Instance;
+        thirdPersonCam = ThirdPersonSmartCamera.Instance;
         motor = player.Motor;
         #if UNITY_EDITOR
         if (debuggerMode) {

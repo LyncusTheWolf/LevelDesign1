@@ -29,7 +29,7 @@ public class ParentOnTag : MonoBehaviour {
         if (tags.Contains(other.tag) && other.transform.parent != this.transform) {
             other.transform.SetParent(this.transform);
             if (childCamera) {
-                ThirdPersonCamera.Instance.transform.SetParent(this.transform);
+                ThirdPersonSmartCamera.Instance.transform.SetParent(this.transform);
             }
 
             Debug.Log("Triggered");
@@ -40,7 +40,7 @@ public class ParentOnTag : MonoBehaviour {
         if (tags.Contains(other.tag) && other.transform.parent == this.transform) {
             other.transform.SetParent(null);
             if (childCamera) {
-                ThirdPersonCamera.Instance.transform.SetParent(null);
+                ThirdPersonSmartCamera.Instance.transform.SetParent(null);
             }
         }
     }

@@ -19,7 +19,16 @@ public class CharacterMotor : MonoBehaviour {
         public bool ableToPushBlocks;
 	}
 
-	public SkillSet skills;
+    #region Animator Strings
+    public const string LOCOMOTION_STRING = "Base Layer.Locomotion";
+    public const string JUMP_STRING = "Base Layer.Actions.Jump";
+    public const string FALL_STRING = "Base Layer.Falling";
+    public const string PUSH_STRING = "Base Layer.Actions.Push Block";
+    public const string WALL_SLIDE_STRING = "Base Layer.Actions.Wall Slide";
+    public const string WALL_JUMP_STRING = "Base Layer.Actions.Wall Jump";
+    #endregion
+
+    public SkillSet skills;
 
 	[SerializeField]
 	private Animator anim;
@@ -88,6 +97,17 @@ public class CharacterMotor : MonoBehaviour {
     private PushableBlock currentBlock;
     private Vector3 blockNormal;
 
+    //Anim Hashes
+    private AnimatorStateInfo currentBaseStateInfo;
+    private AnimatorTransitionInfo currentTransitionInfo;
+
+    private int locomotionString_ID;
+    private int jumpString_ID;
+    private int fallString_ID;
+    private int pushString_ID;
+    private int wallSlideString_ID;
+    private int wallJumpString_ID;
+
 	//private Vector3 groundSlope;
 	private GroundHit groundValues;
 
@@ -96,12 +116,35 @@ public class CharacterMotor : MonoBehaviour {
 		set{ velocity = value; }
 	}
 
-	public void Awake(){
+    private void LoadHashes() {
+        locomotionString_ID = Animator.StringToHash(LOCOMOTION_STRING);
+        jumpString_ID = Animator.StringToHash(JUMP_STRING);
+        fallString_ID = Animator.StringToHash(FALL_STRING);
+        pushString_ID = Animator.StringToHash(PUSH_STRING);
+        wallSlideString_ID = Animator.StringToHash(WALL_SLIDE_STRING);
+        wallJumpString_ID = Animator.StringToHash(WALL_JUMP_STRING);
+    }
+
+    public void Awake(){
 		controller = GetComponent<CharacterController> ();
+
+        LoadHashes();
 	}
 
 	public void Update(){
-		CheckGrounding();
+        currentBaseStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        currentTransitionInfo = anim.GetAnimatorTransitionInfo(0);
+        //AnimatorStateInfo actionStateInfo = anim.GetCurrentAnimatorStateInfo(1);
+
+        //Debug.Log(actionStateInfo.fullPathHash);
+        Debug.Log(currentBaseStateInfo.fullPathHash);
+
+        if(currentBaseStateInfo.fullPathHash == jumpString_ID) {
+            Debug.Log("Jumping");
+        }
+
+        CheckGrounding();
+        ResetAnimatorCues();
 
 		Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
 		Vector3 dir = CameraRelativeInput(input);
@@ -118,14 +161,13 @@ public class CharacterMotor : MonoBehaviour {
 
 		//Debug.DrawRay(transform.position, dir * 100.0f, Color.yellow);
 
-		moveDelta = Vector3.Lerp(moveDelta, dir * (controller.isGrounded? moveSpeed : aerialSpeed), Time.deltaTime * (controller.isGrounded || onWall? groundMomentumChangeSpeed : aerialMomentumChangeSpeed));
+        //controller.isGrounded
+		moveDelta = Vector3.Lerp(moveDelta, dir * (controller.isGrounded ? moveSpeed : aerialSpeed), Time.deltaTime * (controller.isGrounded || onWall? groundMomentumChangeSpeed : aerialMomentumChangeSpeed));
 
         if (Input.GetButtonDown("Jump")) {
             if (!skills.ableToJump) {
                 Debug.Log("Player is not able to jump yet");
-            } else if (isGrounded) {
-                JumpInternal();
-            } else if (canWallJump) {
+            } else if (canWallJump && onWall) {
                 //moveDelta = Vector3.Reflect(moveDelta, wallNormal);                     //Reflect the move direction across the walls normal
                 moveDelta = wallNormal;
                 moveDelta.y = 0;                                                        //Temporarily kill the y to get the direction that the character is jumping from
@@ -133,7 +175,12 @@ public class CharacterMotor : MonoBehaviour {
                 onWall = false;
                 anim.SetTrigger("Wall Jump");
                 JumpInternal();                                               //Reapply the y value as a jump vertical speed
-            } else if (!isGrounded && canDoubleJump) {
+            } else if (isGrounded) {
+                if (AnimAbleToJump()) {
+                    anim.SetTrigger("Jump");
+                }
+                JumpInternal();
+            }  else if (!isGrounded && canDoubleJump) {
                 if (!ignoreJumpingCap) {
                     canDoubleJump = false;
                 }
@@ -145,6 +192,7 @@ public class CharacterMotor : MonoBehaviour {
         } else if (currentBlock != null && isGrounded && skills.ableToPushBlocks) {
             moveDelta = -blockNormal * pushStrength;
             currentBlock.SetNextFrameDirection(-blockNormal * pushStrength);
+            anim.SetBool("Pushing", true);
             //currentBlock.rigidBody.AddForce(-blockNormal * pushStrength, ForceMode.VelocityChange);
         } else {
             if (onWall && skills.ableToWallGrab) {
@@ -193,7 +241,6 @@ public class CharacterMotor : MonoBehaviour {
 
 	private void JumpInternal() {
 		moveDelta.y = jumpSpeed;
-		anim.SetTrigger("Jump");
 	}
 
 	private void CheckGrounding() {
@@ -234,11 +281,12 @@ public class CharacterMotor : MonoBehaviour {
 
         if (controller.isGrounded) {
             anim.SetBool("Grounded", true);
-            velocity.y = Mathf.Clamp(velocity.y, 0.0f, float.MaxValue);
+            velocity.y = Mathf.Clamp(velocity.y, -0.5f, float.MaxValue);
             if (skills.ableToDoubleJump) {
                 canDoubleJump = true;
             }
         } else {
+            Debug.Log("Not grounded");
             anim.SetBool("Grounded", false);
         }
 	}
@@ -273,163 +321,13 @@ public class CharacterMotor : MonoBehaviour {
 
 	public void AnimRespawn() {
 		anim.SetTrigger("Respawn");
-	} 
-}
-
-#region Old Code
-/*
-[RequireComponent(typeof(CharacterController))]
-public class CharacterMotor : MonoBehaviour {
-
-    public SkillSet skills;
-
-    [SerializeField]
-    private Transform visualObject;
-
-    [SerializeField]
-    private float groundSpeed;
-    [SerializeField]
-    private float aerialSpeed;
-    [SerializeField]
-    private float gravity;
-    [SerializeField]
-    private float jumpSpeed;
-    [SerializeField]
-    private float aerialMomentum;
-
-    [SerializeField]
-    private ParticleSystem particleTrailer;
-
-    public Vector3 velocity;
-
-    private CharacterController controller;
-    private Vector3 moveVector;
-    private bool canJump;
-    private bool canDoubleJump;
-    private float verticalVelocity;
-    private Vector3 groundedVelocity;
-    private Vector3 wallNormal;
-    private bool onWall;
-
-    private Animator anim;
-
-    private void Awake() {
-        controller = GetComponent<CharacterController>();
-        anim = visualObject.GetComponent<Animator>();
-        //particleTrailer.Stop();
-    }
-
-    // Use this for initialization
-    void Start () {
-		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        moveVector = Vector3.zero;
 
-        Vector3 input = Vector3.zero;
-        input.x = Input.GetAxis("Horizontal");
-        input.z = Input.GetAxis("Vertical");
-        input = Vector3.ClampMagnitude(input, 1.0f);
-        input = CameraRelativeInput(input);
-
-        if (controller.isGrounded) {
-            moveVector = input;
-            moveVector *= groundSpeed;
-
-            //EvaluateParticleTrailer(input);
-        } else {
-            moveVector = groundedVelocity;
-            moveVector += input * aerialSpeed;
-        }
-
-        verticalVelocity = verticalVelocity - gravity * Time.deltaTime;
-        if (Input.GetButtonDown("Jump")) {
-            if (onWall) {
-                Vector3 reflection = Vector3.Reflect(velocity, wallNormal);
-                Vector3 projected = Vector3.ProjectOnPlane(reflection, Vector3.up);
-                groundedVelocity = projected.normalized * groundSpeed + wallNormal * aerialSpeed;
-            }
-
-            if (canJump) {
-                canJump = false;
-                verticalVelocity += jumpSpeed;
-            } else if (canDoubleJump) {
-                canDoubleJump = false;
-                verticalVelocity += jumpSpeed;
-            }
-        }
-
-        moveVector.y = verticalVelocity;
-        velocity = moveVector;
-
-        anim.SetFloat("Velocity", groundedVelocity.magnitude);
-
-        VisualAllign(moveVector);
-        CollisionFlags flags = controller.Move(moveVector * Time.deltaTime);
-
-        if ((flags & CollisionFlags.Below) != 0) {
-            //Kill the y values on total velicity and assign this to grounded velocity
-
-            Vector3 temp = velocity;
-            temp.y = 0;
-            groundedVelocity = temp;
-            verticalVelocity = -3.0f;
-            if (skills.ableToJump) {
-                canJump = true;
-            }
-
-            if (skills.ableToDoubleJump) {
-                canDoubleJump = true;
-            }
-
-            onWall = false;
-            Debug.Log("Is grounded");
-        } else if ((flags & CollisionFlags.Sides) != 0) {
-            if (skills.ableToJump) {
-                canJump = true;
-            }
-
-            if (skills.ableToWallJump) {
-                onWall = true;
-            }
-        } else if ((flags & CollisionFlags.Above) != 0) {
-            verticalVelocity = 0;
-        } else {
-            canJump = false;
-            onWall = false;
-        }
+    private void ResetAnimatorCues() {
+        anim.SetBool("Pushing", false);
     }
 
-    private void VisualAllign(Vector3 dir) {
-        dir.y = 0;
-        transform.LookAt(transform.position + dir);
+    private bool AnimAbleToJump() {
+        return currentBaseStateInfo.fullPathHash == locomotionString_ID;
     }
-
-    //TODO fix later
-    private void EvaluateParticleTrailer(Vector3 input) {
-        if (input.magnitude > 0.2f && !particleTrailer.isPlaying) {
-            Debug.Log("Play trailer");
-            particleTrailer.Play();
-        } else if(input.magnitude < 0.2f && particleTrailer.isPlaying) {
-            particleTrailer.Stop();
-        }
-    }
-
-    private Vector3 CameraRelativeInput(Vector3 input) {
-        Vector3 root = transform.forward;
-        Vector3 camDirection = Camera.main.transform.forward;
-        camDirection.y = 0.0f; // kill Y
-        Quaternion referentialShift = Quaternion.FromToRotation(Vector3.forward, Vector3.Normalize(camDirection));
-
-        Vector3 moveDirection = referentialShift * input;
-
-        return moveDirection;
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit) {
-        wallNormal = hit.normal;
-    }
-}*/
-#endregion
+}

@@ -34,11 +34,14 @@ public abstract class Character : MonoBehaviour {
     protected void Init() {
         currentHealth = GameManager.PLAYER_STARTING_HEALTH;
         maxHealth = GameManager.PLAYER_STARTING_HEALTH;
+        ResetCharacter();
     }
 
     public void ResetCharacter() {
         currentHealth = maxHealth;
-        onReset();
+        if(onReset != null) {
+            onReset();
+        }
     }
 
     public void Damage(int amt) {
