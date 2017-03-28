@@ -137,7 +137,7 @@ public class CharacterMotor : MonoBehaviour {
         //AnimatorStateInfo actionStateInfo = anim.GetCurrentAnimatorStateInfo(1);
 
         //Debug.Log(actionStateInfo.fullPathHash);
-        Debug.Log(currentBaseStateInfo.fullPathHash);
+        //Debug.Log(currentBaseStateInfo.fullPathHash);
 
         if(currentBaseStateInfo.fullPathHash == jumpString_ID) {
             Debug.Log("Jumping");
@@ -148,7 +148,7 @@ public class CharacterMotor : MonoBehaviour {
 
 		Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
 		Vector3 dir = CameraRelativeInput(input);
-		float oldVertical = velocity.y;
+        float oldVertical = velocity.y;
 		moveDelta = velocity;
 		oldVertical -= GameManager.Instance.gravity * Time.deltaTime;
 		float oldMagnitude = dir.magnitude;
