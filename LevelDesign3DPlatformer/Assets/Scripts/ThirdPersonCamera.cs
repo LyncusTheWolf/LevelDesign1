@@ -77,7 +77,7 @@ public class ThirdPersonCamera : MonoBehaviour {
         //Debug.Log(rightHorizontal);
 
         Vector3 characterOffset = target.position + new Vector3(0.0f, followHeight, 0.0f);
-        Vector3 lookAt = characterOffset;
+        //Vector3 lookAt = characterOffset;
 
         //Debug.Log("Velocity: " + motor.velocity.magnitude);
 

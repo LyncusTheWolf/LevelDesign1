@@ -73,8 +73,17 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="NeoFurUnityPlugin">
-      <HintPath>Assets\Plugins\NeoFur\NeoFurUnityPlugin.dll</HintPath>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -95,11 +104,13 @@
     <Compile Include="Assets\Scripts\JumpPad.cs" />
     <Compile Include="Assets\Scripts\KeyLock.cs" />
     <Compile Include="Assets\Scripts\KillZone.cs" />
+    <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\CoinPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\DoubleJumpPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\JumpPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\KeyPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\SkillPickup.cs" />
+    <Compile Include="Assets\Scripts\Pickup Scripts\StrengthSkillup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\WallGrabPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\WallJumpPickup.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
@@ -110,6 +121,8 @@
     <Compile Include="Assets\Scripts\ThirdPersonSmartCamera.cs" />
     <Compile Include="Assets\Scripts\UI\HeartUIElem.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Driver.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Panel.cs" />
     <Compile Include="Assets\Scripts\Utility\Bezier.cs" />
     <Compile Include="Assets\Scripts\Utility\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\Utility\BezierSpline.cs" />
@@ -123,22 +136,6 @@
     <Compile Include="Assets\Scripts\Utility\ParentOnTag.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Plugins\NeoFur\License.txt" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\CPUDotRay.shader" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\CPUDotRayNoGeom.shader" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\DotRay.shader" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\NeoAsset.compute" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\NeoFurPhysics.compute" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\CommonFunctions.cginc" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\ComputeFur.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\EditMorph.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSetup.cginc" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSurface.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSurfaceTwoSided.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSurfaceVTF.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSurfaceVTFMobile.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\NeoFurLighting.cginc" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\SampleLighting.cginc" />
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />

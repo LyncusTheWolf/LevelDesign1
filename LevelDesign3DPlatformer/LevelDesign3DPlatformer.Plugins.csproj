@@ -73,8 +73,17 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="NeoFurUnityPlugin">
-      <HintPath>Assets\Plugins\NeoFur\NeoFurUnityPlugin.dll</HintPath>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -90,22 +99,6 @@
     <Compile Include="Assets\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Plugins\NeoFur\License.txt" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\CPUDotRay.shader" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\CPUDotRayNoGeom.shader" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\DotRay.shader" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\NeoAsset.compute" />
-    <None Include="Assets\Plugins\NeoFur\Resources\Shaders\NeoFurPhysics.compute" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\CommonFunctions.cginc" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\ComputeFur.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\EditMorph.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSetup.cginc" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSurface.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSurfaceTwoSided.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSurfaceVTF.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\FurSurfaceVTFMobile.shader" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\NeoFurLighting.cginc" />
-    <None Include="Assets\Plugins\NeoFur\Shaders\SampleLighting.cginc" />
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class ThirdPersonSmartCamera : MonoBehaviour {
 
     public const float INPUT_DEADZONE = 0.05f;
@@ -37,11 +38,21 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
     [SerializeField]
     private LayerMask collisionsMask;
 
+    [SerializeField]
+    private int whiskerCount;
+    [SerializeField]
+    private float whiskerAngleSpread;
 
+    private Camera cam;
     private float currentPitch;
     private float currentYaw;
     private CharacterMotor motor;
     private Vector3 velocityCamSmooth = Vector3.zero;
+    private Vector3 frameOffset;
+    private Vector3 targetLastFrame;
+
+    RaycastHit whiskerHit;
+    Quaternion whiskerDirection = Quaternion.identity;
 
     public static ThirdPersonSmartCamera Instance {
         get { return instance; }
@@ -54,6 +65,11 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
         }
 
         instance = this;
+        cam = GetComponent<Camera>();
+        if(wallCollisionOffset < cam.nearClipPlane + 0.05f) {
+            //Make sure the wall collision offset is at minimum slightly bigger than the cameras near clip plane
+            wallCollisionOffset = cam.nearClipPlane + 0.05f;
+        }
     }
 
     // Use this for initialization
@@ -70,7 +86,7 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
         float rightHorizontal = Input.GetAxis("RightHorizontal");
         float rightVertical = Input.GetAxis("RightVertical");
 
-        Vector3 frameOffset = target.position + lookOffset;
+        frameOffset = target.position + lookOffset;
 
         Vector3 temp = motor.Velocity;
         temp.y = 0;
@@ -78,24 +94,10 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
         //currentPitch = transform.rotation.x;
         //currentYaw = transform.rotation.y;
 
-        Debug.Log(Vector3.Distance(frameOffset, transform.position));
+        //Debug.Log(Vector3.Distance(frameOffset, transform.position));
 
         float rHorzAbs = Mathf.Abs(rightHorizontal);
         float rVertAbs = Mathf.Abs(rightVertical);
-
-        if (temp.magnitude > 0.3f && rHorzAbs <= INPUT_DEADZONE) {
-            Debug.LogWarning("Smart Camera requires fine tuning in the late update");
-
-            //Vector3 lookDir = Vector3.Lerp(followTransform.right * (leftX < 0 ? 1.0f : -1.0f), followTransform.forward * (leftY < 0 ? -1.0f : 1.0f), Mathf.Abs(Vector3.Dot(transform.forward, followTransform.forward)));
-
-            float targetYaw = Mathf.Lerp(Quaternion.LookRotation(target.right).eulerAngles.y * (vertical < 0 ? 1.0f : -1.0f), target.rotation.eulerAngles.y, Mathf.Abs(Vector3.Dot(Vector3.ProjectOnPlane(transform.forward, Vector3.up), target.forward)));
-
-            currentYaw = Mathf.LerpAngle(currentYaw, target.rotation.eulerAngles.y, Time.deltaTime * camSmoothSpeed);
-            
-        } else if(rHorzAbs > INPUT_DEADZONE) {
-            //currentYaw = Mathf.Clamp(currentYaw - Time.deltaTime * camAdjustSpeed * rightHorizontal, 0.0f, 360.0f);
-            currentYaw = currentYaw - Time.deltaTime * camAdjustSpeed * rightHorizontal;           
-        }
 
         if(temp.magnitude > 0.3f && rVertAbs <= INPUT_DEADZONE) {
             currentPitch = Mathf.Lerp(currentPitch, startPitch, Time.deltaTime * camSmoothSpeed);
@@ -103,19 +105,43 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
             currentPitch = Mathf.Clamp(currentPitch + Time.deltaTime * camAdjustSpeed * rightVertical, pitchMinValue, pitchMaxValue);
         }
 
+        if (PollWhiskers()) {
+
+        }  else if (temp.magnitude > 0.3f && rHorzAbs <= INPUT_DEADZONE) {
+            //???
+            //Fix lerping functionality for target Yaw
+            //float lerpValue = Mathf.Abs(Vector3.Dot(Vector3.ProjectOnPlane(transform.forward, Vector3.up), target.forward));
+            //Debug.Log(lerpValue);
+            //float targetYaw = Mathf.Lerp(target.rotation.eulerAngles.y + (vertical < 0 ? 90.0f : -90.0f), target.rotation.eulerAngles.y, lerpValue);
+
+            //currentYaw = Mathf.LerpAngle(currentYaw, target.rotation.eulerAngles.y, Time.deltaTime * camSmoothSpeed);
+            currentYaw = Mathf.LerpAngle(currentYaw, target.rotation.eulerAngles.y, Time.deltaTime * camSmoothSpeed);
+        } else if (rHorzAbs > INPUT_DEADZONE) {
+            //currentYaw = Mathf.Clamp(currentYaw - Time.deltaTime * camAdjustSpeed * rightHorizontal, 0.0f, 360.0f);
+            currentYaw -= Time.deltaTime * camAdjustSpeed * rightHorizontal;
+        }
+
         Quaternion frameDir = Quaternion.Euler(currentPitch, currentYaw, 0.0f);
 
         Vector3 targetPos = frameOffset - frameDir * Vector3.forward * followDistance;
 
-        //Debug.DrawLine(frameOffset, targetPos, Color.blue);
+        Debug.DrawLine(frameOffset, targetPos, Color.blue);
 
-        CompensateForOcclusion(frameOffset, ref targetPos, wallCollisionOffset);
-
-        SmoothPosition(transform.position, targetPos);
+        if(CompensateForOcclusion(frameOffset, ref targetPos, wallCollisionOffset)) {
+            SmoothPosition(transform.position, targetPos);
+            Debug.LogWarning("Smart Camera requires fine tuning in the late update");
+            Debug.Log("First Occulision Smooth");
+            if (CompensateForOcclusion(transform.position, ref frameOffset, wallCollisionOffset)) {
+                Debug.Log("Calling Occulision");
+                transform.position = targetPos;
+            }
+        } else {
+            SmoothPosition(transform.position, targetPos);
+        }        
 
         //Vector3.Distance(frameOffset, transform.position) > followDistance
 
-        transform.position = targetPos;
+        //transform.position = targetPos;
 
         transform.LookAt(frameOffset);
     }
@@ -125,11 +151,56 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
         motor = t.GetComponent<CharacterMotor>();
     }
 
-    private void SmoothPosition(Vector3 fromPos, Vector3 toPos) {
-        transform.position = Vector3.SmoothDamp(fromPos, toPos, ref velocityCamSmooth, camSmoothDampTime);
+    /// <summary>
+    /// Checks the directions whiskering out from the target and updates the direction of the camera relative to any collisions detected
+    /// </summary>
+    /// <returns></returns>
+    private bool PollWhiskers() {
+        bool whiskerCollision = false;
+
+        //Check left whiskers
+        for (int i = whiskerCount; i > 0; i--) {
+            if (WhiskerSubFunction(i)) {
+                whiskerCollision = true;
+                break;
+            }
+        }
+
+        //Check right whiskers
+        for (int i = -whiskerCount; i < 0; i++) {
+            if (WhiskerSubFunction(i)) {
+                whiskerCollision = true;
+                break;
+            }
+        }
+
+        return whiskerCollision;
     }
 
-    private void CompensateForOcclusion(Vector3 fromObject, ref Vector3 toTarget, float offset) {
+    private bool WhiskerSubFunction(int index) {
+        whiskerDirection = Quaternion.Euler(currentPitch, currentYaw + index * whiskerAngleSpread, 0.0f);
+
+        Vector3 target = frameOffset - whiskerDirection * Vector3.forward * followDistance;
+        Debug.DrawLine(frameOffset, target, Color.yellow);
+
+        if (Physics.Linecast(frameOffset, target, out whiskerHit, collisionsMask)) {
+            currentYaw -= (1 - whiskerHit.distance / followDistance) * Time.deltaTime * camAdjustSpeed * index;
+            return true;
+        }
+
+        return false;
+    }
+
+    private void SmoothPosition(Vector3 fromPos, Vector3 toPos) {
+        Vector3 targetLocation = Vector3.SmoothDamp(fromPos, toPos, ref velocityCamSmooth, camSmoothDampTime * (Vector3.Distance(frameOffset, transform.position) > followDistance ? 1.0f : 2.5f));
+
+        Collider[] cols = Physics.OverlapSphere(targetLocation, cam.nearClipPlane);
+        if(cols.Length == 0) {
+            transform.position = targetLocation;
+        }
+    }
+
+    private bool CompensateForOcclusion(Vector3 fromObject, ref Vector3 toTarget, float offset) {
 
         Debug.DrawLine(fromObject, toTarget, Color.cyan);
 
@@ -147,11 +218,19 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
 
             //toTarget = new Vector3(wallHit.point.x - offsetDir.x, toTarget.y, wallHit.point.z - offsetDir.z);
             //transform.position = toTarget;
+            return true;
         }
+
+        return false;
     }
 
     public void ResetPosition() {
+        Debug.Log("Reseting camera");
         currentPitch = startPitch;
         currentYaw = target.rotation.eulerAngles.y;
+
+        Quaternion frameDir = Quaternion.Euler(currentPitch, currentYaw, 0.0f);
+
+        transform.position = target.position + lookOffset - frameDir * Vector3.forward * followDistance;
     }
 }
