@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField]
     private Transform respawnPoint;
+    [SerializeField]
+    private float respawnDelay;
 
     public float gravity;
     private int playerLives;
@@ -65,23 +67,28 @@ public class GameManager : MonoBehaviour {
     public void PollLives() {
         if(playerLives > 0) {
             playerLives--;
-            RespawnPlayer();
+            StartCoroutine(RespawnPlayer());
         } else {
             GameOver();
         }
     }
 
     public void GameOver() {
-
+        player.gameObject.SetActive(false);
     }
 
-    private void RespawnPlayer() {
-        motor.AnimRespawn();
+    private IEnumerator RespawnPlayer() {
+        player.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(respawnDelay);
+
         player.ResetCharacter();
-        //rigidBody.velocity = Vector3.zero;
-        Debug.Log(respawnPoint.position);
         player.transform.position = respawnPoint.position;
         player.transform.rotation = respawnPoint.rotation;
+        player.gameObject.SetActive(true);
+        motor.AnimRespawn();       
         thirdPersonCam.ResetPosition();
+
+        StopCoroutine(RespawnPlayer());
     }
 }

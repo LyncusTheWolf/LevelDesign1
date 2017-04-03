@@ -10,8 +10,14 @@ public abstract class Character : MonoBehaviour {
     public event OnDamage onDamage;
     public event OnReset onReset;
 
+    public float protectionTimer;
+
     protected int currentHealth;
     protected int maxHealth;
+
+    protected bool isAlive;
+
+    private float currentProtectionTimer;
 
     public int CurrentHealth {
         get { return currentHealth; }
@@ -21,34 +27,43 @@ public abstract class Character : MonoBehaviour {
         get { return maxHealth; }
     }
 
+    public bool IsAlive {
+        get { return isAlive; }
+    }
+
+    public abstract Vector3 Center { get; }
+
     // Use this for initialization
     void Start () {
-		
+        Init();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    protected void Init() {
-        currentHealth = GameManager.PLAYER_STARTING_HEALTH;
-        maxHealth = GameManager.PLAYER_STARTING_HEALTH;
-        ResetCharacter();
+	public virtual void Update () {
+        currentProtectionTimer -= Time.deltaTime;
     }
+
+    protected abstract void Init();
 
     public void ResetCharacter() {
         currentHealth = maxHealth;
-        if(onReset != null) {
+        isAlive = true;
+        if (onReset != null) {
             onReset();
         }
     }
 
     public void Damage(int amt) {
+        if(currentProtectionTimer > 0.0f) {
+            return;
+        }
+
         currentHealth = Mathf.Clamp(currentHealth - amt, 0, maxHealth);
         onDamage();
         if (currentHealth <= 0) {
             Kill();
+        } else {
+            currentProtectionTimer = protectionTimer;
         }
     }
 

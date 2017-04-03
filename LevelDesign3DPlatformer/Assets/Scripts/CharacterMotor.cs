@@ -116,6 +116,10 @@ public class CharacterMotor : MonoBehaviour {
 		set{ velocity = value; }
 	}
 
+    public Vector3 Center {
+        get { return transform.position + controller.center; }
+    }
+
     private void LoadHashes() {
         locomotionString_ID = Animator.StringToHash(LOCOMOTION_STRING);
         jumpString_ID = Animator.StringToHash(JUMP_STRING);

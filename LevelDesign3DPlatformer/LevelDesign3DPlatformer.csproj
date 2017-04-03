@@ -93,10 +93,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AI\Actions\Action.cs" />
+    <Compile Include="Assets\Scripts\AI\Actions\AttackAction.cs" />
+    <Compile Include="Assets\Scripts\AI\Actions\ChaseAction.cs" />
+    <Compile Include="Assets\Scripts\AI\Actions\PatrolAction.cs" />
+    <Compile Include="Assets\Scripts\AI\Decisions\Decision.cs" />
+    <Compile Include="Assets\Scripts\AI\Decisions\ForceTransition.cs" />
+    <Compile Include="Assets\Scripts\AI\Decisions\InMeleeRange.cs" />
+    <Compile Include="Assets\Scripts\AI\Decisions\LookForTarget.cs" />
+    <Compile Include="Assets\Scripts\AI\Decisions\LostSight.cs" />
+    <Compile Include="Assets\Scripts\AI\Enemy.cs" />
+    <Compile Include="Assets\Scripts\AI\EnemyCharacteristics.cs" />
+    <Compile Include="Assets\Scripts\AI\State.cs" />
+    <Compile Include="Assets\Scripts\AI\StateController.cs" />
+    <Compile Include="Assets\Scripts\AI\Transition.cs" />
     <Compile Include="Assets\Scripts\ButtonTrigger.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\CharacterMotor.cs" />
     <Compile Include="Assets\Scripts\CharacterRigidbodyMotor.cs" />
+    <Compile Include="Assets\Scripts\DamageTrigger.cs" />
     <Compile Include="Assets\Scripts\DrawBridge.cs" />
     <Compile Include="Assets\Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -134,8 +149,10 @@
     <Compile Include="Assets\Scripts\Utility\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\Utility\Occelate.cs" />
     <Compile Include="Assets\Scripts\Utility\ParentOnTag.cs" />
+    <Compile Include="Assets\Scripts\WarpZone.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\Toon Shader.shader" />
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />

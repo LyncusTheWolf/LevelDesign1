@@ -1,18 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(CharacterRigidbodyMotor))]
-//[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CharacterMotor))]
+[RequireComponent(typeof(CharacterController))]
 public class Player : Character {
 
     private static Player instance;
 
-
     private int coins;
     private int keyCount;
     private CharacterMotor motor;
+    private CharacterController controller;
     //private Rigidbody rigidBody;
 
     public static Player Instance {
@@ -31,6 +31,10 @@ public class Player : Character {
         get { return motor; }
     }
 
+    public override Vector3 Center {
+        get { return transform.position + controller.center; }
+    }
+
     private void Awake() {
         if(instance != null) {
             Destroy(gameObject);
@@ -39,19 +43,15 @@ public class Player : Character {
 
         instance = this;
         motor = GetComponent<CharacterMotor>();
-        //rigidBody = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
 
         coins = 0;
         keyCount = 0;
     }
 
-    // Use this for initialization
-    void Start () {
-        Init();
-    }
-	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    public override void Update() {
+        base.Update();
         if (Input.GetKeyDown(KeyCode.N)) {
             Damage(1);
         }
@@ -60,6 +60,13 @@ public class Player : Character {
     public override void Kill() {
         //Do things...
         GameManager.Instance.PollLives();
+    }
+
+    protected override void Init() {
+        currentHealth = GameManager.PLAYER_STARTING_HEALTH;
+        maxHealth = GameManager.PLAYER_STARTING_HEALTH;
+        ResetCharacter();
+        ThirdPersonSmartCamera.Instance.player = this;
     }
 
     public void AddCoin(int amt) {

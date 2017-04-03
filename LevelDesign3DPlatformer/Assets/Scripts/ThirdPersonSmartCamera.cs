@@ -9,6 +9,8 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
 
     private static ThirdPersonSmartCamera instance;
 
+    public Player player;
+
     [SerializeField]
     private Transform target;
 
@@ -42,7 +44,7 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
     private int whiskerCount;
     [SerializeField]
     private float whiskerAngleSpread;
-
+    
     private Camera cam;
     private float currentPitch;
     private float currentYaw;
@@ -81,6 +83,10 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
 	}
 
     private void LateUpdate() {
+        if(player == null || player.IsAlive == false) {
+            return;
+        }
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         float rightHorizontal = Input.GetAxis("RightHorizontal");
@@ -99,27 +105,27 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
         float rHorzAbs = Mathf.Abs(rightHorizontal);
         float rVertAbs = Mathf.Abs(rightVertical);
 
-        if(temp.magnitude > 0.3f && rVertAbs <= INPUT_DEADZONE) {
+        if (temp.magnitude > 0.3f && rVertAbs <= INPUT_DEADZONE) {
             currentPitch = Mathf.Lerp(currentPitch, startPitch, Time.deltaTime * camSmoothSpeed);
-        } else if(rVertAbs > INPUT_DEADZONE) {
+        } else if (rVertAbs > INPUT_DEADZONE) {
             currentPitch = Mathf.Clamp(currentPitch + Time.deltaTime * camAdjustSpeed * rightVertical, pitchMinValue, pitchMaxValue);
         }
 
-        if (PollWhiskers()) {
+        if (!PreditiveCollisionCheck()) {          
+            if (temp.magnitude > 0.3f && rHorzAbs <= INPUT_DEADZONE) {
+                //???
+                //Fix lerping functionality for target Yaw
+                //float lerpValue = Mathf.Abs(Vector3.Dot(Vector3.ProjectOnPlane(transform.forward, Vector3.up), target.forward));
+                //Debug.Log(lerpValue);
+                //float targetYaw = Mathf.Lerp(target.rotation.eulerAngles.y + (vertical < 0 ? 90.0f : -90.0f), target.rotation.eulerAngles.y + (horizontal < 0 ? 180.0f: 0.0f), lerpValue);
 
-        }  else if (temp.magnitude > 0.3f && rHorzAbs <= INPUT_DEADZONE) {
-            //???
-            //Fix lerping functionality for target Yaw
-            //float lerpValue = Mathf.Abs(Vector3.Dot(Vector3.ProjectOnPlane(transform.forward, Vector3.up), target.forward));
-            //Debug.Log(lerpValue);
-            //float targetYaw = Mathf.Lerp(target.rotation.eulerAngles.y + (vertical < 0 ? 90.0f : -90.0f), target.rotation.eulerAngles.y, lerpValue);
-
-            //currentYaw = Mathf.LerpAngle(currentYaw, target.rotation.eulerAngles.y, Time.deltaTime * camSmoothSpeed);
-            currentYaw = Mathf.LerpAngle(currentYaw, target.rotation.eulerAngles.y, Time.deltaTime * camSmoothSpeed);
-        } else if (rHorzAbs > INPUT_DEADZONE) {
-            //currentYaw = Mathf.Clamp(currentYaw - Time.deltaTime * camAdjustSpeed * rightHorizontal, 0.0f, 360.0f);
-            currentYaw -= Time.deltaTime * camAdjustSpeed * rightHorizontal;
-        }
+                //currentYaw = Mathf.LerpAngle(currentYaw, targetYaw, Time.deltaTime * camSmoothSpeed);
+                currentYaw = Mathf.LerpAngle(currentYaw, target.rotation.eulerAngles.y, Time.deltaTime * camSmoothSpeed);
+            } else if (rHorzAbs > INPUT_DEADZONE) {
+                //currentYaw = Mathf.Clamp(currentYaw - Time.deltaTime * camAdjustSpeed * rightHorizontal, 0.0f, 360.0f);
+                currentYaw -= Time.deltaTime * camAdjustSpeed * rightHorizontal;
+            }
+        }  
 
         Quaternion frameDir = Quaternion.Euler(currentPitch, currentYaw, 0.0f);
 
@@ -155,7 +161,7 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
     /// Checks the directions whiskering out from the target and updates the direction of the camera relative to any collisions detected
     /// </summary>
     /// <returns></returns>
-    private bool PollWhiskers() {
+    private bool PreditiveCollisionCheck() {
         bool whiskerCollision = false;
 
         //Check left whiskers
@@ -173,6 +179,14 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
                 break;
             }
         }
+
+        /*if(Physics.Raycast(transform.position, frameOffset - transform.position, Vector3.Distance(transform.position, frameOffset), collisionsMask)) {
+            if(transform.position.y > frameOffset.y) {
+                currentPitch += Time.deltaTime * camAdjustSpeed;
+            } else {
+                currentPitch -= Time.deltaTime * camAdjustSpeed;
+            }
+        }*/
 
         return whiskerCollision;
     }
@@ -194,10 +208,12 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
     private void SmoothPosition(Vector3 fromPos, Vector3 toPos) {
         Vector3 targetLocation = Vector3.SmoothDamp(fromPos, toPos, ref velocityCamSmooth, camSmoothDampTime * (Vector3.Distance(frameOffset, transform.position) > followDistance ? 1.0f : 2.5f));
 
-        Collider[] cols = Physics.OverlapSphere(targetLocation, cam.nearClipPlane);
+        transform.position = targetLocation;
+
+        /*Collider[] cols = Physics.OverlapSphere(targetLocation, cam.nearClipPlane);
         if(cols.Length == 0) {
             transform.position = targetLocation;
-        }
+        }*/
     }
 
     private bool CompensateForOcclusion(Vector3 fromObject, ref Vector3 toTarget, float offset) {
