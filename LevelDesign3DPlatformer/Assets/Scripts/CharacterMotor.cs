@@ -166,7 +166,7 @@ public class CharacterMotor : MonoBehaviour {
 		//Debug.DrawRay(transform.position, dir * 100.0f, Color.yellow);
 
         //controller.isGrounded
-		moveDelta = Vector3.Lerp(moveDelta, dir * (controller.isGrounded ? moveSpeed : aerialSpeed), Time.deltaTime * (controller.isGrounded || onWall? groundMomentumChangeSpeed : aerialMomentumChangeSpeed));
+		moveDelta = Vector3.Lerp(moveDelta, dir * (isGrounded ? moveSpeed : aerialSpeed), Time.deltaTime * (isGrounded || onWall? groundMomentumChangeSpeed : aerialMomentumChangeSpeed));
 
         if (Input.GetButtonDown("Jump")) {
             if (!skills.ableToJump) {
@@ -261,8 +261,8 @@ public class CharacterMotor : MonoBehaviour {
 			groundValues.angleAxis = Vector3.Cross(groundValues.normal, transform.up);
 			groundValues.slopeDirection = Vector3.Cross(groundValues.normal, groundValues.angleAxis);
 
-            //anim.SetBool("Grounded", true);
-            //velocity.y = Mathf.Clamp (velocity.y, 0.0f, float.MaxValue);
+            anim.SetBool("Grounded", true);
+            velocity.y = Mathf.Clamp (velocity.y, 0.0f, float.MaxValue);
 
 			//TODO: Dynamically parent the player to the object they are grounded to.
 			//transform.SetParent(hit.collider.transform);
@@ -277,13 +277,13 @@ public class CharacterMotor : MonoBehaviour {
 			groundValues.angleAxis = Vector3.zero;
 			groundValues.slopeDirection = -transform.forward;
 
-            //anim.SetBool("Grounded", false);
+            anim.SetBool("Grounded", false);
 
             //TODO: Remove parent and set to null
             //transform.SetParent(null);
         }
 
-        if (controller.isGrounded) {
+        /*if (controller.isGrounded) {
             anim.SetBool("Grounded", true);
             velocity.y = Mathf.Clamp(velocity.y, -0.5f, float.MaxValue);
             if (skills.ableToDoubleJump) {
@@ -292,7 +292,7 @@ public class CharacterMotor : MonoBehaviour {
         } else {
             Debug.Log("Not grounded");
             anim.SetBool("Grounded", false);
-        }
+        }*/
 	}
 
 	private void CheckForClimbableWalls(Vector3 dir) {
