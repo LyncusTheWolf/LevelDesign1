@@ -73,6 +73,18 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="LevelDesign3DPlatformer.Plugins.csproj">
@@ -112,6 +124,7 @@
     <Compile Include="Assets\Scripts\Pickup Scripts\DoubleJumpPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\JumpPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\KeyPickup.cs" />
+    <Compile Include="Assets\Scripts\Pickup Scripts\Secret.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\SkillPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\StrengthSkillup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\WallGrabPickup.cs" />
@@ -120,6 +133,7 @@
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\PushableBlock.cs" />
     <Compile Include="Assets\Scripts\RespawnPoint.cs" />
+    <Compile Include="Assets\Scripts\SpawnEvent.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonSmartCamera.cs" />
     <Compile Include="Assets\Scripts\UI\HeartUIElem.cs" />

@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour {
     private CharacterMotor motor;
     //private ThirdPersonCamera thirdPersonCam;
     private ThirdPersonSmartCamera thirdPersonCam;
+    private int secretsOnLevel;
+    private int secretsFound;
 
     public Transform RespawnPoint {
         set { respawnPoint = value; }
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour {
 
         instance = this;
         playerLives = 3;
+        secretsOnLevel = 0;
     }
 
     public void Start() {
@@ -90,5 +93,13 @@ public class GameManager : MonoBehaviour {
         thirdPersonCam.ResetPosition();
 
         StopCoroutine(RespawnPlayer());
+    }
+
+    public void SubscribeSecret(Secret secret) {
+        secretsOnLevel++;
+    }
+
+    public void CheckSecret(Secret secret) {
+        secretsFound++;
     }
 }
