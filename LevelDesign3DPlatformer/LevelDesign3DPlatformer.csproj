@@ -73,18 +73,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="LevelDesign3DPlatformer.Plugins.csproj">
@@ -119,6 +107,7 @@
     <Compile Include="Assets\Scripts\JumpPad.cs" />
     <Compile Include="Assets\Scripts\KeyLock.cs" />
     <Compile Include="Assets\Scripts\KillZone.cs" />
+    <Compile Include="Assets\Scripts\LevelEndPoint.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\CoinPickup.cs" />
     <Compile Include="Assets\Scripts\Pickup Scripts\DoubleJumpPickup.cs" />

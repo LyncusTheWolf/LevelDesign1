@@ -166,7 +166,7 @@ public class CharacterMotor : MonoBehaviour {
 		//Debug.DrawRay(transform.position, dir * 100.0f, Color.yellow);
 
         //controller.isGrounded
-		moveDelta = Vector3.Lerp(moveDelta, dir * (isGrounded ? moveSpeed : aerialSpeed), Time.deltaTime * (isGrounded || onWall? groundMomentumChangeSpeed : aerialMomentumChangeSpeed));
+		moveDelta = Vector3.Lerp(moveDelta, dir * (controller.isGrounded ? moveSpeed : aerialSpeed), Time.deltaTime * (controller.isGrounded || onWall? groundMomentumChangeSpeed : aerialMomentumChangeSpeed));
 
         if (Input.GetButtonDown("Jump")) {
             if (!skills.ableToJump) {
@@ -283,7 +283,7 @@ public class CharacterMotor : MonoBehaviour {
             //transform.SetParent(null);
         }
 
-        /*if (controller.isGrounded) {
+        /*f (controller.isGrounded) {
             anim.SetBool("Grounded", true);
             velocity.y = Mathf.Clamp(velocity.y, -0.5f, float.MaxValue);
             if (skills.ableToDoubleJump) {
