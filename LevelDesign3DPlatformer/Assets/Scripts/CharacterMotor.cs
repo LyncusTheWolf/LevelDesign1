@@ -135,6 +135,10 @@ public class CharacterMotor : MonoBehaviour {
         LoadHashes();
 	}
 
+    public void Start() {
+        GameManager.Instance.LevelInit();
+    }
+
 	public void Update(){
         currentBaseStateInfo = anim.GetCurrentAnimatorStateInfo(0);
         currentTransitionInfo = anim.GetAnimatorTransitionInfo(0);
@@ -261,8 +265,8 @@ public class CharacterMotor : MonoBehaviour {
 			groundValues.angleAxis = Vector3.Cross(groundValues.normal, transform.up);
 			groundValues.slopeDirection = Vector3.Cross(groundValues.normal, groundValues.angleAxis);
 
-            anim.SetBool("Grounded", true);
-            velocity.y = Mathf.Clamp (velocity.y, 0.0f, float.MaxValue);
+            //anim.SetBool("Grounded", true);
+            //velocity.y = Mathf.Clamp (velocity.y, 0.0f, float.MaxValue);
 
 			//TODO: Dynamically parent the player to the object they are grounded to.
 			//transform.SetParent(hit.collider.transform);
@@ -277,13 +281,13 @@ public class CharacterMotor : MonoBehaviour {
 			groundValues.angleAxis = Vector3.zero;
 			groundValues.slopeDirection = -transform.forward;
 
-            anim.SetBool("Grounded", false);
+            //anim.SetBool("Grounded", false);
 
             //TODO: Remove parent and set to null
             //transform.SetParent(null);
         }
 
-        /*f (controller.isGrounded) {
+        if (controller.isGrounded) {
             anim.SetBool("Grounded", true);
             velocity.y = Mathf.Clamp(velocity.y, -0.5f, float.MaxValue);
             if (skills.ableToDoubleJump) {
@@ -292,7 +296,7 @@ public class CharacterMotor : MonoBehaviour {
         } else {
             Debug.Log("Not grounded");
             anim.SetBool("Grounded", false);
-        }*/
+        }
 	}
 
 	private void CheckForClimbableWalls(Vector3 dir) {

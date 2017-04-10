@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour {
     private static GameManager instance;
 
     public delegate void OnAlive();
+    public delegate void OnGameOver();
+
+    public event OnGameOver gameOverEvent;
 
     #if UNITY_EDITOR
     [SerializeField]
@@ -30,12 +33,24 @@ public class GameManager : MonoBehaviour {
     private int secretsOnLevel;
     private int secretsFound;
 
+    public static GameManager Instance {
+        get { return instance; }
+    }
+
+    public int PlayerLives {
+        get { return playerLives; }
+    }
+
     public Transform RespawnPoint {
         set { respawnPoint = value; }
     }
 
-    public static GameManager Instance {
-        get { return instance; }
+    public int SecretsOnLevel {
+        get { return secretsOnLevel; }
+    }
+
+    public int SecretsFound {
+        get { return secretsFound; }
     }
 
     private void Awake() {
@@ -45,11 +60,11 @@ public class GameManager : MonoBehaviour {
         }
 
         instance = this;
-        playerLives = 3;
-        secretsOnLevel = 0;
+        DontDestroyOnLoad(this);
+        ResetLevel();
     }
 
-    public void Start() {
+    public void LevelInit() {
         player = Player.Instance;
         //thirdPersonCam = ThirdPersonCamera.Instance;
         thirdPersonCam = ThirdPersonSmartCamera.Instance;
@@ -67,6 +82,11 @@ public class GameManager : MonoBehaviour {
         #endif
     }
 
+    public void ResetLevel() {
+        playerLives = 3;
+        secretsOnLevel = 0;
+    }
+
     public void PollLives() {
         if(playerLives > 0) {
             playerLives--;
@@ -78,6 +98,9 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver() {
         player.gameObject.SetActive(false);
+        if (gameOverEvent != null) {
+            gameOverEvent();
+        }
     }
 
     private IEnumerator RespawnPlayer() {

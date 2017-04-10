@@ -12,7 +12,7 @@ public class LevelEndPoint : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            Debug.Log("You beat the level");
+            LevelManager.Instance.LoadLevelComplete();
         }
     }
 }

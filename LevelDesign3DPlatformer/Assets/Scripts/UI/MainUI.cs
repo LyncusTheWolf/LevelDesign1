@@ -13,6 +13,8 @@ public class MainUI : MonoBehaviour {
     [SerializeField]
     private Text keyText;
     [SerializeField]
+    private Text livesText;
+    [SerializeField]
     private GridLayoutGroup healthPanelgroup;
     [SerializeField]
     private GameObject healthElemPrefab;
@@ -39,12 +41,18 @@ public class MainUI : MonoBehaviour {
         playerRef.onDamage += UpdateHealth;
         playerRef.onReset += UpdateHealth;
         UpdateHealth();
+        GameManager.Instance.gameOverEvent += GameOverTransition;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnDisable() {
+        GameManager.Instance.gameOverEvent -= GameOverTransition;
+    }
+
+    // Update is called once per frame
+    void Update () {
         coinText.text = "x " + playerRef.Coins;
         keyText.text = "x " + playerRef.KeyCount;
+        livesText.text = "x " + GameManager.Instance.PlayerLives;
 	}
 
     public void UpdateHealth() {
@@ -60,5 +68,14 @@ public class MainUI : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void GameOverTransition() {
+        StartCoroutine(GameOverInternal());
+    }
+
+    public IEnumerator GameOverInternal() {
+        yield return new WaitForSeconds(3.0f);
+        LevelManager.Instance.LoadGameOverScreen();
     }
 }
