@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public const int MAX_PLAYER_HEALTH = 16;
     public const int PLAYER_STARTING_HEALTH = 3;
+    public const int PLAYER_STARTING_LIVES = 3;
 
     private static GameManager instance;
 
@@ -83,13 +84,14 @@ public class GameManager : MonoBehaviour {
     }
 
     public void ResetLevel() {
-        playerLives = 3;
+        playerLives = PLAYER_STARTING_LIVES;
         secretsOnLevel = 0;
     }
 
     public void PollLives() {
-        if(playerLives > 0) {
-            playerLives--;
+        playerLives--;
+
+        if (playerLives > 0) {           
             StartCoroutine(RespawnPlayer());
         } else {
             GameOver();
@@ -124,5 +126,9 @@ public class GameManager : MonoBehaviour {
 
     public void CheckSecret(Secret secret) {
         secretsFound++;
+    }
+
+    public void ResetGameState() {
+        playerLives = PLAYER_STARTING_LIVES;
     }
 }
