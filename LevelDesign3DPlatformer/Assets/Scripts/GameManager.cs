@@ -12,13 +12,16 @@ public class GameManager : MonoBehaviour {
 
     public delegate void OnAlive();
     public delegate void OnGameOver();
+    public delegate void OnPause();
 
     public event OnGameOver gameOverEvent;
+    public event OnPause pauseEvent;
+    public event OnPause unPauseEvent;
 
     #if UNITY_EDITOR
     [SerializeField]
     private bool debuggerMode;
-#endif
+    #endif
 
     [SerializeField]
     private Transform respawnPoint;
@@ -33,6 +36,14 @@ public class GameManager : MonoBehaviour {
     private ThirdPersonSmartCamera thirdPersonCam;
     private int secretsOnLevel;
     private int secretsFound;
+
+    private float levelTimer;
+
+    private bool paused;
+    private bool invertCameraX;
+    private bool invertCameraY;
+
+    private bool levelIsRunning;
 
     public static GameManager Instance {
         get { return instance; }
@@ -54,6 +65,25 @@ public class GameManager : MonoBehaviour {
         get { return secretsFound; }
     }
 
+    public bool Paused {
+        get { return paused; }
+    }
+
+    public bool InvertCameraX {
+        get { return invertCameraX; }
+        set { invertCameraX = value; }
+    }
+
+    public bool InvertCameraY {
+        get { return invertCameraY; }
+        set { invertCameraY = value; }
+    }
+
+    public bool LevelIsRunning {
+        get { return levelIsRunning; }
+        set { levelIsRunning = value; }
+    }
+
     private void Awake() {
         if(instance != null) {
             Destroy(gameObject);
@@ -62,7 +92,13 @@ public class GameManager : MonoBehaviour {
 
         instance = this;
         DontDestroyOnLoad(this);
-        ResetLevel();
+        ResetGameState();
+    }
+
+    public void Update() {
+        if (levelIsRunning) {
+            levelTimer += Time.deltaTime;
+        }
     }
 
     public void LevelInit() {
@@ -83,11 +119,6 @@ public class GameManager : MonoBehaviour {
         #endif
     }
 
-    public void ResetLevel() {
-        playerLives = PLAYER_STARTING_LIVES;
-        secretsOnLevel = 0;
-    }
-
     public void PollLives() {
         playerLives--;
 
@@ -103,6 +134,8 @@ public class GameManager : MonoBehaviour {
         if (gameOverEvent != null) {
             gameOverEvent();
         }
+
+        GameOverTransition();
     }
 
     private IEnumerator RespawnPlayer() {
@@ -130,5 +163,35 @@ public class GameManager : MonoBehaviour {
 
     public void ResetGameState() {
         playerLives = PLAYER_STARTING_LIVES;
+        secretsOnLevel = 0;
+        secretsFound = 0;
+        levelTimer = 0.0f;
+    }
+
+    public void TogglePause() {
+        paused = !paused;
+
+        if (paused) {
+            Time.timeScale = 0.0f;
+            pauseEvent();
+        } else {
+            Time.timeScale = 1.0f;
+            unPauseEvent();
+        }
+    }
+
+    public void GameOverTransition() {
+        StartCoroutine(GameOverInternal());
+    }
+
+    public IEnumerator GameOverInternal() {
+        yield return new WaitForSeconds(3.0f);
+        LevelManager.Instance.LoadGameOverScreen();
+    }
+
+    public string GetTimeFormatted() {
+        int minutes = (int)(levelTimer / 60);
+        int seconds = (int)(levelTimer % 60);
+        return minutes + ": " + seconds;
     }
 }

@@ -15,14 +15,21 @@ public class UI_Panel : MonoBehaviour {
     [SerializeField]
     private UnityEvent onClose;
 
-    public void Update() {
-        if (Input.GetButtonDown("Cancel")) {
+    [SerializeField]
+    private UI_Panel previousPanel;
 
+    private UI_Driver attachDriver;
+
+    public virtual void Update() {
+        if (previousPanel != null && Input.GetButtonDown("Cancel")) {
+            attachDriver.ToggleUIPanel(previousPanel);
         }
     }
 
-    public void Init() {
-        if(initialElement != null) {
+    public void Init(UI_Driver driverHandle) {
+        attachDriver = driverHandle;
+
+        if (initialElement != null) {
             initialElement.Select();
         }
 

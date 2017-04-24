@@ -9,6 +9,8 @@ public class LevelCompleteUI : MonoBehaviour {
     public float tallyTime;
 
     [SerializeField]
+    private Text timerText;
+    [SerializeField]
     public Text secretsResults;
 
 	// Use this for initialization
@@ -22,7 +24,17 @@ public class LevelCompleteUI : MonoBehaviour {
 	}
 
     public IEnumerator TallyInternal() {
-        for(int i = 0; i < 30; i++) {
+        yield return new WaitForSeconds(1.5f);
+
+        timerText.enabled = true;
+
+        timerText.text = "Time taken:\n     " + GameManager.Instance.GetTimeFormatted();
+
+        yield return new WaitForSeconds(1.0f);
+
+        secretsResults.enabled = true;
+
+        for (int i = 0; i < 30; i++) {
             secretsResults.text = "Secrets found:\n     " + Random.Range(0, 9) + " / " + GameManager.Instance.SecretsOnLevel;
             yield return new WaitForSeconds(tallyTime / 30.0f);
         }

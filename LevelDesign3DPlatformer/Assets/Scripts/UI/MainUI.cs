@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainUI : MonoBehaviour {
+public class MainUI : UI_Panel {
 
     public const int HEALTH_PER_ROW = 8;
     public const int HEALTH_ROWS = GameManager.MAX_PLAYER_HEALTH / HEALTH_PER_ROW;
-
+   
     [SerializeField]
     private Text coinText;
     [SerializeField]
@@ -41,11 +41,10 @@ public class MainUI : MonoBehaviour {
         playerRef.onDamage += UpdateHealth;
         playerRef.onReset += UpdateHealth;
         UpdateHealth();
-        GameManager.Instance.gameOverEvent += GameOverTransition;
     }
 
     private void OnDisable() {
-        GameManager.Instance.gameOverEvent -= GameOverTransition;
+
     }
 
     // Update is called once per frame
@@ -68,14 +67,5 @@ public class MainUI : MonoBehaviour {
                 }
             }
         }
-    }
-
-    public void GameOverTransition() {
-        StartCoroutine(GameOverInternal());
-    }
-
-    public IEnumerator GameOverInternal() {
-        yield return new WaitForSeconds(3.0f);
-        LevelManager.Instance.LoadGameOverScreen();
     }
 }

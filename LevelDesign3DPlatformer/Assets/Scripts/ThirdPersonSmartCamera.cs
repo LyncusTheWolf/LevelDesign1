@@ -89,8 +89,8 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        float rightHorizontal = Input.GetAxis("RightHorizontal");
-        float rightVertical = Input.GetAxis("RightVertical");
+        float rightHorizontal = Input.GetAxis("RightHorizontal") * (GameManager.Instance.InvertCameraX ? -1 : 1);
+        float rightVertical = Input.GetAxis("RightVertical") * (GameManager.Instance.InvertCameraY ? -1 : 1);
 
         frameOffset = target.position + lookOffset;
 

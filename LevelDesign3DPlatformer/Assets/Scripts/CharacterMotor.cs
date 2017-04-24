@@ -19,6 +19,8 @@ public class CharacterMotor : MonoBehaviour {
         public bool ableToPushBlocks;
 	}
 
+    public const float INPUT_DEAD_ZONE = 0.05f;
+
     #region Animator Strings
     public const string LOCOMOTION_STRING = "Base Layer.Locomotion";
     public const string JUMP_STRING = "Base Layer.Actions.Jump";
@@ -140,6 +142,10 @@ public class CharacterMotor : MonoBehaviour {
     }
 
 	public void Update(){
+        if (GameManager.Instance.Paused) {
+            return;
+        }
+
         currentBaseStateInfo = anim.GetCurrentAnimatorStateInfo(0);
         currentTransitionInfo = anim.GetAnimatorTransitionInfo(0);
         //AnimatorStateInfo actionStateInfo = anim.GetCurrentAnimatorStateInfo(1);
@@ -155,6 +161,12 @@ public class CharacterMotor : MonoBehaviour {
         ResetAnimatorCues();
 
 		Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+
+        //If the input given by the player is below the dead zone threshold then consider the input to be zero for the frame
+        if(input.sqrMagnitude <= INPUT_DEAD_ZONE) {
+            input = Vector3.zero;
+        }
+
 		Vector3 dir = CameraRelativeInput(input);
         float oldVertical = velocity.y;
 		moveDelta = velocity;
