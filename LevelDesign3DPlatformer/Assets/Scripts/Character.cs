@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour {
 
+    public const float FLICKER_SPEED = 0.1f;
+
     public delegate void OnDamage();
     public delegate void OnReset();
 
@@ -11,6 +13,9 @@ public abstract class Character : MonoBehaviour {
     public event OnReset onReset;
 
     public float protectionTimer;
+
+    [SerializeField]
+    private GameObject visuals;
 
     protected int currentHealth;
     protected int maxHealth;
@@ -40,7 +45,7 @@ public abstract class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	public virtual void Update () {
-        currentProtectionTimer -= Time.deltaTime;
+
     }
 
     protected abstract void Init();
@@ -63,9 +68,21 @@ public abstract class Character : MonoBehaviour {
         if (currentHealth <= 0) {
             Kill();
         } else {
-            currentProtectionTimer = protectionTimer;
+            StartCoroutine(DamageInternal());
         }
     }
 
     public abstract void Kill();
+
+    public IEnumerator DamageInternal() {
+        currentProtectionTimer = protectionTimer;
+
+        while (currentProtectionTimer > 0.0f) {
+            visuals.SetActive(false);
+            yield return new WaitForSeconds(FLICKER_SPEED);
+            visuals.SetActive(true);
+            yield return new WaitForSeconds(FLICKER_SPEED);
+            currentProtectionTimer -= Time.deltaTime;
+        }
+    }
 }

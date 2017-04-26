@@ -12,9 +12,11 @@ public class LevelCompleteUI : MonoBehaviour {
     private Text timerText;
     [SerializeField]
     public Text secretsResults;
+    [SerializeField]
+    public GameObject continueIcon;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         StartCoroutine(TallyInternal());
 	}
 	
@@ -41,7 +43,9 @@ public class LevelCompleteUI : MonoBehaviour {
 
         secretsResults.text = "Secrets found:\n     " + GameManager.Instance.SecretsFound + " / " + GameManager.Instance.SecretsOnLevel;
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.5f);
+
+        continueIcon.SetActive(true);
 
         while (true) {
             if (Input.GetButtonDown("Jump")) {

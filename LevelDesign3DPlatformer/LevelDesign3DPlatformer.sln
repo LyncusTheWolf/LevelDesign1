@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelDesign3DPlatformer.Plugins", "LevelDesign3DPlatformer.Plugins.csproj", "{9D372E52-FA6A-80F0-26D2-744CE2835DA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelDesign3DPlatformer", "LevelDesign3DPlatformer.csproj", "{635EBBCB-55A3-B48A-4982-470DAD100D2D}"
