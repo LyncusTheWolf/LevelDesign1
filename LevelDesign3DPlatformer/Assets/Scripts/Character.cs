@@ -45,7 +45,7 @@ public abstract class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	public virtual void Update () {
-
+        currentProtectionTimer -= Time.deltaTime;
     }
 
     protected abstract void Init();
@@ -77,12 +77,19 @@ public abstract class Character : MonoBehaviour {
     public IEnumerator DamageInternal() {
         currentProtectionTimer = protectionTimer;
 
-        while (currentProtectionTimer > 0.0f) {
-            visuals.SetActive(false);
-            yield return new WaitForSeconds(FLICKER_SPEED);
-            visuals.SetActive(true);
-            yield return new WaitForSeconds(FLICKER_SPEED);
-            currentProtectionTimer -= Time.deltaTime;
+        while (currentProtectionTimer > 0.0f) {           
+            yield return DamageSubInternal();
+            Debug.Log("Called");
         }
+
+        visuals.SetActive(true);
+    }
+
+    public IEnumerator DamageSubInternal() {
+        visuals.SetActive(false);
+        yield return new WaitForSeconds(FLICKER_SPEED);
+        Debug.Log("Called between");
+        visuals.SetActive(true);
+        yield return new WaitForSeconds(FLICKER_SPEED);
     }
 }

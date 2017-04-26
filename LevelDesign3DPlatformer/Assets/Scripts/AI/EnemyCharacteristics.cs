@@ -14,4 +14,5 @@ public class EnemyCharacteristics : ScriptableObject {
     public float meleeRange;
     public float minRangeAttack;
     public float maxRangeAttack;
+    public float minAttackAngle;
 }

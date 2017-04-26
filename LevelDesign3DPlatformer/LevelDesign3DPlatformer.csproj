@@ -18,7 +18,7 @@
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.1f1</UnityVersion>
     <RootNamespace></RootNamespace>
-    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
+    <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -73,6 +73,18 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="LevelDesign3DPlatformer.Plugins.csproj">
@@ -88,6 +100,7 @@
     <Compile Include="Assets\Scripts\AI\Decisions\Decision.cs" />
     <Compile Include="Assets\Scripts\AI\Decisions\ForceTransition.cs" />
     <Compile Include="Assets\Scripts\AI\Decisions\InMeleeRange.cs" />
+    <Compile Include="Assets\Scripts\AI\Decisions\InSight.cs" />
     <Compile Include="Assets\Scripts\AI\Decisions\LookForTarget.cs" />
     <Compile Include="Assets\Scripts\AI\Decisions\LostSight.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy.cs" />
@@ -101,6 +114,7 @@
     <Compile Include="Assets\Scripts\CharacterRigidbodyMotor.cs" />
     <Compile Include="Assets\Scripts\DamageTrigger.cs" />
     <Compile Include="Assets\Scripts\DrawBridge.cs" />
+    <Compile Include="Assets\Scripts\FinishLevel.cs" />
     <Compile Include="Assets\Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Gate.cs" />
@@ -130,6 +144,7 @@
     <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonSmartCamera.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
+    <Compile Include="Assets\Scripts\UI\Game_UI_Driver.cs" />
     <Compile Include="Assets\Scripts\UI\HeartUIElem.cs" />
     <Compile Include="Assets\Scripts\UI\LevelCompleteUI.cs" />
     <Compile Include="Assets\Scripts\UI\LevelLoadHook.cs" />
@@ -139,6 +154,7 @@
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Driver.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Panel.cs" />
+    <Compile Include="Assets\Scripts\UnpauseHook.cs" />
     <Compile Include="Assets\Scripts\Utility\Bezier.cs" />
     <Compile Include="Assets\Scripts\Utility\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\Utility\BezierSpline.cs" />

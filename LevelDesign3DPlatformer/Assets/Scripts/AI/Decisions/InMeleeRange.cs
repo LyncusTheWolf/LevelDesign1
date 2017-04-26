@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PluggableAI/Decisions/InRange")]
 public class InMeleeRange : Decision {
     public override bool Decide(StateController controller) {
-        return Vector3.Distance(controller.target.transform.position, controller.transform.position) <= controller.characteristics.meleeRange;
+        float angleBetween = Vector3.Angle(controller.transform.forward, controller.target.transform.position - controller.transform.position);
+
+        return Vector3.Distance(controller.target.transform.position, controller.transform.position) <= controller.characteristics.meleeRange && angleBetween < controller.characteristics.minAttackAngle;
     }
 }
