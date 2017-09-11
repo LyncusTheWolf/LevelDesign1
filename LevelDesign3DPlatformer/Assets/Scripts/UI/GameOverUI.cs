@@ -24,7 +24,7 @@ public class GameOverUI : MonoBehaviour {
 
         while (true) {
             if (Input.GetButtonDown("Jump")) {
-                LevelManager.Instance.LoadStartScreen();
+                GameManager.Instance.LoadStartScreen();
                 break;
             }
             yield return null;

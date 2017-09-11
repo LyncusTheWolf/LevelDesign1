@@ -8,16 +8,7 @@ public class CharacterMotor : MonoBehaviour {
 		public Vector3 normal;
 		public Vector3 angleAxis;
 		public Vector3 slopeDirection;
-	}
-
-	[System.Serializable]
-	public struct SkillSet {
-		public bool ableToJump;
-		public bool ableToWallGrab;
-		public bool ableToWallJump;
-		public bool ableToDoubleJump;
-        public bool ableToPushBlocks;
-	}
+	}	
 
     public const float INPUT_DEAD_ZONE = 0.05f;
 
@@ -29,8 +20,6 @@ public class CharacterMotor : MonoBehaviour {
     public const string WALL_SLIDE_STRING = "Base Layer.Actions.Wall Slide";
     public const string WALL_JUMP_STRING = "Base Layer.Actions.Wall Jump";
     #endregion
-
-    public SkillSet skills;
 
 	[SerializeField]
 	private Animator anim;
@@ -137,10 +126,6 @@ public class CharacterMotor : MonoBehaviour {
         LoadHashes();
 	}
 
-    public void Start() {
-        GameManager.Instance.LevelInit();
-    }
-
 	public void Update(){
         if (GameManager.Instance.Paused) {
             return;
@@ -185,7 +170,7 @@ public class CharacterMotor : MonoBehaviour {
 		moveDelta = Vector3.Lerp(moveDelta, dir * (controller.isGrounded ? moveSpeed : aerialSpeed), Time.deltaTime * (controller.isGrounded || onWall? groundMomentumChangeSpeed : aerialMomentumChangeSpeed));
 
         if (Input.GetButtonDown("Jump")) {
-            if (!skills.ableToJump) {
+            if (!GameManager.Instance.KnowSkill(GameManager.SkillSet.AbleToJump)) {
                 Debug.Log("Player is not able to jump yet");
             } else if (canWallJump && onWall) {
                 //moveDelta = Vector3.Reflect(moveDelta, wallNormal);                     //Reflect the move direction across the walls normal
@@ -209,13 +194,13 @@ public class CharacterMotor : MonoBehaviour {
             } else {
                 moveDelta.y = oldVertical;
             }
-        } else if (currentBlock != null && isGrounded && skills.ableToPushBlocks) {
+        } else if (currentBlock != null && isGrounded && GameManager.Instance.KnowSkill(GameManager.SkillSet.AbleToPushBlocks)) {
             moveDelta = -blockNormal * pushStrength;
             currentBlock.SetNextFrameDirection(-blockNormal * pushStrength);
             anim.SetBool("Pushing", true);
             //currentBlock.rigidBody.AddForce(-blockNormal * pushStrength, ForceMode.VelocityChange);
         } else {
-            if (onWall && skills.ableToWallGrab) {
+            if (onWall && GameManager.Instance.KnowSkill(GameManager.SkillSet.AbleToWallGrab)) {
                 moveDelta *= wallSlidePenalty;
                 moveDelta.y = Mathf.Clamp(oldVertical, -wallSlideSpeed, jumpSpeed);
             } else {
@@ -226,7 +211,7 @@ public class CharacterMotor : MonoBehaviour {
 		Vector3 groundVelocity = moveDelta;
 		groundVelocity.y = 0;
 
-		if (onWall && skills.ableToWallGrab) {
+		if (onWall && GameManager.Instance.KnowSkill(GameManager.SkillSet.AbleToWallGrab)) {
 			Vector3 temp = wallNormal;
 			temp.y = 0;
 			transform.rotation = Quaternion.LookRotation(temp, transform.up);
@@ -302,7 +287,7 @@ public class CharacterMotor : MonoBehaviour {
         if (controller.isGrounded) {
             anim.SetBool("Grounded", true);
             velocity.y = Mathf.Clamp(velocity.y, -0.5f, float.MaxValue);
-            if (skills.ableToDoubleJump) {
+            if (GameManager.Instance.KnowSkill(GameManager.SkillSet.AbleToDoubleJump)) {
                 canDoubleJump = true;
             }
         } else {
@@ -317,7 +302,7 @@ public class CharacterMotor : MonoBehaviour {
 		if(!isGrounded && Physics.Raycast(transform.position + characterCenterCast, dir, out hit, wallCastLength, jumpableWallMask)) {
 			wallNormal = hit.normal;
 			onWall = true;
-			if (skills.ableToWallJump) {
+			if (GameManager.Instance.KnowSkill(GameManager.SkillSet.AbleToWallJump)) {
 				canWallJump = true;
 			}
 

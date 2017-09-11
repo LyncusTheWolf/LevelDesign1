@@ -48,9 +48,9 @@ public class MainUI : UI_Panel {
     }
 
     // Update is called once per frame
-    void Update () {
-        coinText.text = "x " + playerRef.Coins;
-        keyText.text = "x " + playerRef.KeyCount;
+    public override void Update () {
+        coinText.text = "x " + GameManager.Instance.Coins;
+        keyText.text = "x " + GameManager.Instance.KeyCount;
         livesText.text = "x " + GameManager.Instance.PlayerLives;
 	}
 

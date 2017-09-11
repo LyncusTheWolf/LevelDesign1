@@ -13,14 +13,14 @@ public class LevelEndPoint : MonoBehaviour {
     }
 
     public void Start() {
-        GameManager.Instance.LevelIsRunning = true;
+        //GameManager.Instance.LevelIsRunning = true;
     }
 
 
     public void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            GameManager.Instance.LevelIsRunning = false;
-            LevelManager.Instance.LoadLevelComplete();
+            //GameManager.Instance.LevelIsRunning = false;
+            GameManager.Instance.LoadLevelComplete();
         }
     }
 }

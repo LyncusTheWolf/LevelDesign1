@@ -17,7 +17,8 @@ public class RespawnPoint : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other) {
         if (active && other.tag == "Player") {
-            GameManager.Instance.RespawnPoint = this.transform;
+            //GameManager.Instance.RespawnPoint = this.transform;
+            GameManager.SetRespawnPoint(this);
             active = false;
             visual.SetActive(false);
         }

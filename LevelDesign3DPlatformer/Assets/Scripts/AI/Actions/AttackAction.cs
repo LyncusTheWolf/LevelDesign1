@@ -12,7 +12,7 @@ public class AttackAction : Action {
     public override void Act(StateController controller) {  
         if (!controller.AnimStateInfo.IsTag("Attack")) {
             Debug.Log("I am attacking D:<");
-            controller.NavAgent.Stop();
+            controller.NavAgent.isStopped = true;
             controller.anim.SetTrigger("Attack");
         }
     }

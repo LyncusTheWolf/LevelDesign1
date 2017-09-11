@@ -14,7 +14,7 @@ public class KeyPickup : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other) {
         if(other.tag == "Player") {
-            other.GetComponent<Player>().AddKey(1);
+            GameManager.Instance.AddKey(1);
             Instantiate(pickupParticles, transform.position + Vector3.up, transform.rotation);
             Destroy(gameObject);
         }

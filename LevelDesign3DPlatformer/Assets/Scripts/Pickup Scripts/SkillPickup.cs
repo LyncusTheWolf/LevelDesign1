@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public abstract class SkillPickup : MonoBehaviour {
+public class SkillPickup : MonoBehaviour {
+
+    public GameManager.SkillSet skillOnPickup;
 
     [SerializeField]
     private GameObject pickupParticles;
@@ -14,11 +16,9 @@ public abstract class SkillPickup : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other) {
         if(other.tag == "Player") {
-            ModifyMotor(other.GetComponent<CharacterMotor>());
+            GameManager.Instance.LearnSkill(skillOnPickup);
             Instantiate(pickupParticles, transform.position + Vector3.up, transform.rotation);
             Destroy(this.gameObject);
         }
     }
-
-	protected abstract void ModifyMotor(CharacterMotor motor);
 }

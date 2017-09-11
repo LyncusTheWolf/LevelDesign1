@@ -5,6 +5,6 @@ using UnityEngine;
 public class LevelLoadHook : MonoBehaviour {
 
 	public void LoadFirstLevel() {
-        LevelManager.Instance.LoadLevel(1);
+        GameManager.Instance.LoadLevel(1);
     } 
 }

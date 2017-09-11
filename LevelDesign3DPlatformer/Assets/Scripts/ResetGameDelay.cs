@@ -19,6 +19,6 @@ public class LoadDelay : MonoBehaviour {
 
     public IEnumerator LoadCoroutine() {
         yield return new WaitForSeconds(delay);
-        LevelManager.Instance.LoadLevel(levelID);
+        GameManager.Instance.LoadLevel(levelID);
     }
 }

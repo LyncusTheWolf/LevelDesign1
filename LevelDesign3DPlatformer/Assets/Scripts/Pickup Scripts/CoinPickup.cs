@@ -14,7 +14,7 @@ public class CoinPickup : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
-            other.GetComponent<Player>().AddCoin(1);
+            GameManager.Instance.AddCoin(1);
             Instantiate(pickupParticles, transform.position + Vector3.up, transform.rotation);
             Destroy(gameObject);
         }

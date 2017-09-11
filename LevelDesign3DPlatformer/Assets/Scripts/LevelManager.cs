@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    private static LevelManager instance;
+    /*private static LevelManager instance;
 
     [SerializeField]
     private int startingSceneID;
@@ -39,7 +39,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
     public void LoadLevel(int id) {
-        SceneManager.LoadScene(id);
+        StartCoroutine(LoadLevelInternal(id));
+        //SceneManager.LoadScene(id);
         //GameManager.Instance.ResetLevel(); 
     }
 
@@ -59,4 +60,18 @@ public class LevelManager : MonoBehaviour {
     public void LoadGameOverScreen() {
         LoadLevel(gameOverSceneID);
     }
+
+    public IEnumerator LoadLevelInternal (int levelID) {
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelID, LoadSceneMode.Single);
+        loadOperation.allowSceneActivation = false;
+
+        while(loadOperation.progress < 0.9f) {
+            Debug.Log("Level load progress: " + loadOperation.progress);
+            yield return null;
+        }
+
+        Debug.Log("Scene is done loading");
+
+        loadOperation.allowSceneActivation = true;
+    }*/
 }

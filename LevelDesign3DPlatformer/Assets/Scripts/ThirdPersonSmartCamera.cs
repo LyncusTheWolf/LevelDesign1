@@ -9,7 +9,7 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
 
     private static ThirdPersonSmartCamera instance;
 
-    public Player player;
+    private Player player;
 
     [SerializeField]
     private Transform target;
@@ -73,14 +73,6 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
             wallCollisionOffset = cam.nearClipPlane + 0.05f;
         }
     }
-
-    // Use this for initialization
-    void Start () {
-        LoadTarget(target);
-
-        currentPitch = startPitch;
-        currentYaw = target.rotation.eulerAngles.y;
-	}
 
     private void LateUpdate() {
         if(player == null || player.IsAlive == false) {
@@ -152,9 +144,13 @@ public class ThirdPersonSmartCamera : MonoBehaviour {
         transform.LookAt(frameOffset);
     }
 
-    private void LoadTarget(Transform t) {
-        target = t;
-        motor = t.GetComponent<CharacterMotor>();
+    public void RegisterCharacter(GameObject newCharacter) {
+        Debug.Log("Registering character");
+        target = newCharacter.transform;
+        motor = newCharacter.GetComponent<CharacterMotor>();
+        player = newCharacter.GetComponent<Player>();
+        currentPitch = startPitch;
+        currentYaw = target.rotation.eulerAngles.y;
     }
 
     /// <summary>

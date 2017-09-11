@@ -9,22 +9,12 @@ public class Player : Character {
 
     private static Player instance;
 
-    private int coins;
-    private int keyCount;
     private CharacterMotor motor;
     private CharacterController controller;
     //private Rigidbody rigidBody;
 
     public static Player Instance {
         get { return instance; }
-    }
-
-    public int KeyCount {
-        get { return keyCount; }
-    }
-
-    public int Coins {
-        get { return coins; }
     }
 
     public CharacterMotor Motor {
@@ -43,10 +33,7 @@ public class Player : Character {
 
         instance = this;
         motor = GetComponent<CharacterMotor>();
-        controller = GetComponent<CharacterController>();
-
-        coins = 0;
-        keyCount = 0;
+        controller = GetComponent<CharacterController>();        
     }
 
     // Update is called once per frame
@@ -66,24 +53,5 @@ public class Player : Character {
         currentHealth = GameManager.PLAYER_STARTING_HEALTH;
         maxHealth = GameManager.PLAYER_STARTING_HEALTH;
         ResetCharacter();
-        ThirdPersonSmartCamera.Instance.player = this;
-    }
-
-    public void AddCoin(int amt) {
-        coins += amt;
-        //TODO: Add in life increase functionality
-    }
-
-    public void AddKey(int amt) {
-        keyCount += amt;
-    }
-
-    public bool UseKey() {
-        if(keyCount > 0) {
-            keyCount -= 1;
-            return true;
-        }
-
-        return false;
-    }
+    }   
 }
